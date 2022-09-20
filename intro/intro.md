@@ -1,4 +1,4 @@
-# Modern Data Warehouse for Oracle E-shop
+# Modern Data Warehouse Workshop
 
 ![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
 

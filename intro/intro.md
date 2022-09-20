@@ -3,7 +3,7 @@
 
 ## Introduction
 
-Oracle Autonomous Data Warehouse provides unique capabilities thanks to its integrated multi-model and multi-workload database, also called converged. The goal of this workshop is to show the instant value and new insights they could get if they take advantage of all its capabilities.
+Oracle Autonomous Data Warehouse provides unique capabilities thanks to its integrated multi-model and multi-workload database, also called converged. The goal of this workshop is to show the instant value and new insights when taking advantage of all its capabilities.
 
 ### **Who Should Use This Workshop?**
 

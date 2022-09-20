@@ -1,6 +1,5 @@
 # Oracle Database Service for Microsoft Azure Workshop
 
-![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
 
 ## Introduction
 

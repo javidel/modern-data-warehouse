@@ -1,4 +1,4 @@
-# Create a new Autonomous Data Warehouse Database
+# Provision an Autonomous Data Warehouse and create a new user
 
 ## Introduction
 
@@ -53,9 +53,9 @@ Estimated Lab Time: 15 minutes.
     By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
     By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
 
-    - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `ADW_OAC`.
+    - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `MODERN_DATAWAREHOUSE`.
         ```
-        <copy>ADW_OAC</copy>
+        <copy>MODERN_DATAWAREHOUSE</copy>
         ```
     
     - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
@@ -91,7 +91,7 @@ Estimated Lab Time: 15 minutes.
 
 3. Under **Create administration credentials** section:
 
-    - **Administrator Password:** Enter any password you wish to use noting the specific requirements imposed by ADW.
+    - **Administrator Password:** We are going to use the following password: **Password123##**
     
     - **Reminder:** Note your password in a safe location as this cannot be easily reset.
 

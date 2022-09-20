@@ -135,6 +135,7 @@ Estimated Lab Time: 15 minutes.
 
 You have just created an Autonomous Database with the latest features of Oracle Databases.
 
+## Task 2: Create a new Autonomous Database user
 
 ## Acknowledgements
 

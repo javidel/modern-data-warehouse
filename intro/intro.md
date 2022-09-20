@@ -46,7 +46,7 @@ Here is a video to help with the Oracle Trial Sign Up Process:
 *At this point, you are ready to start learning! Please proceed.*
 
 ## Acknowledgements
-* **Author** - Javier de la Torre,
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
 * **Last Updated By/Date** - Priscila Iruela, September 2022
 

@@ -11,14 +11,15 @@ Everyone can benefit from doing the exercises listed in this guide: technical ex
 
 
 
-## Welcome to Oracle E-shop
+## Welcome to Modern Data Warehouse Workshop
+
 In this workshop we are going to use different capabilities to integrate structured and non-structured data, and provide new business value. We are going to be a company who is shipping different products to our customers. As many of them buy as a “guest mode”, is difficult to find patterns or improve the business. Therefore, we are going to collect Twitter data to discover them. As a result of the workshop, we will learn which customers are on risk of “churn” or not using our service and identify patters inside of our data.
 
 During this workshop, we are going to use these capabilities: JSON, Oracle Text, Graph, Blockchain, Spatial, AutoML and APEX.
 
 
 
-**Estimated Workshop Time: 2 hours .**
+**Estimated Workshop Time: 2 hours.**
 
 ## Objectives
 

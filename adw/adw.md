@@ -92,6 +92,9 @@ Estimated Lab Time: 15 minutes.
 3. Under **Create administration credentials** section:
 
     - **Administrator Password:** We are going to use the following password: **Password123##**
+    ```
+        <copy>Password123##</copy>
+        ```
     
     - **Reminder:** Note your password in a safe location as this cannot be easily reset.
 
@@ -137,6 +140,38 @@ You have just created an Autonomous Database with the latest features of Oracle 
 
 ## Task 2: Create a new Autonomous Database user
 
+1. In order to create a new user, we have to click on **Database Actions** button.
+
+    ![ADB Select Database Actions](./images/adb-dbactions.png)
+
+2. A new tab will open. Look for the option **Database Users**.
+
+    ![ADB Select Database Users](./images/adb-database-users.png)
+
+3. Click on **Create User**
+
+    ![ADB Create Database Users](./images/adb-create-user.png)
+
+4. We are going to create the following user:
+    - **User Name:** CNVG
+    
+    - **Password:** Password123##
+
+    - **Quota:** Unlimited
+    
+    - **Graph:** Enabled
+    
+    - **Web Access:** Enabled
+
+    - **OML:** Enabled
+
+    ![ADB Database User detail](./images/adb-user-details.png)
+
+5. Click the **Create User** button:
+
+    ![ADB Database User detail](./images/adb-user-creation.png)
+
+    Now you can proceed to the next Lab.
 ## Acknowledgements
 
 * **Author** - Javier de la Torre, x

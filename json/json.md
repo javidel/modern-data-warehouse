@@ -55,12 +55,67 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
     
 
 
-## Task 2: Load JSON into Autonomous Database
+## Task 2: Create credential for Autonomous Database
 
+1. Now we have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your profile icon and then on your email name.
 
+    ![Find credentials](./images/go-to-credential.png)
 
+2. Let's create a new token for the Autonomous Database. Click on **Auth Token**.
 
-## Task 3: Run queries over JSON
+    ![Open credentials](./images/go-to-token.png)
+
+3. Click on **Generate Token**
+
+    ![Create credentials](./images/generate-token.png)
+
+4. It will show a popup like this. This token will be shown only once. Click **Show** to show the token. **Save it** in a notepad or a secure place for later. It will never be shown again.
+
+    ![Show token](./images/show-token.png)
+
+5. Click **copy** and store it in a secure place. Then you can click **close**.
+
+    ![Copy token](./images/save-token.png)
+
+6. We have stored the credential, now we need to find and store the location of where the data is stored. We will share this info with the Autonomous Database so it can load it. Let's go back to the Object Storage.
+
+    ![Go to Object](./images/go-to-object.png)
+
+7. Select the JSON bucket we already created.
+
+    ![Select JSON](./images/select-json-bucket.png)
+
+8. Let's find the information from the tweets. From the menu of the file, select **View Object Details**
+
+    ![View Details](./images/get-json-details.png)
+
+9. You will find the url with the JSON file location. **Save this url** as we are going to need it for loading it. Then click **cancel** to exit.
+
+    ![Save URL](./images/get-url-json.png)
+
+## Task 3: Load JSON into Autonomous Database
+
+1. As we have the credential created and we know the url where we store our JSON data, now we can proceed to load this data. Let's go to our Autonomous Data Warehouse
+
+    ![Go to ADW](./images/go-to-adb.png)
+
+2. Select our MODERNDW database
+
+    ![Choose ADW](./images/choose-adw.png)
+
+3. Go to **Database Actions**
+
+    ![Choose DB ACtions](./images/go-to-actions.png)
+
+4. We need to connect with the **CNVG** and not with the ADMIN user. Let's log out first
+
+    ![log out](./images/sign-out.png)
+
+5. Click on **Sign in**.
+
+    ![log ing](./images/sign-in.png)
+
+## Task 4: Run queries over JSON
 
 
 

@@ -1,5 +1,6 @@
 # Modern Data Warehouse Workshop
 
+![Intro Modern Data Warehouse Workshop](./images/converged.PNG)
 
 ## Introduction
 

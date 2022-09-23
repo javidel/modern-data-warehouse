@@ -26,9 +26,42 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 ## Task 1: Upload JSON tweets into Object Storage
 
 1. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket.
-Create Bucket, upload JSON
-Create Credentials and Load JSON
-Run Queries
+
+    ![Go to Buckets](./images/create-bucket.png)
+
+2. Click on **Create Bucket**
+
+    ![Create Bucket](./images/create-bucket2.png)
+
+3. Set the name for the bucket. We are going to call it **json_data**. Then click the **create** button.
+
+    ![Define Bucket](./images/create-bucket3.png)
+
+4. Select the **json_data** bucket.
+
+    ![Select Bucket](./images/select-bucket.png)
+
+5. Click on the **upload** button.
+
+    ![Select Bucket](./images/select-upload.png)
+
+6. Select the JSON file we just downloaded and then click on **upload**
+
+    ![Select Bucket](./images/upload-json.png)
+
+7. We should see the JSON file there.
+
+    ![Select Bucket](./images/file-uploaded.png)
+    
+
+
+## Task 2: Load JSON into Autonomous Database
+
+
+
+
+## Task 3: Run queries over JSON
+
 
 
 ## Acknowledgements

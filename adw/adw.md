@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This workshop walks you through the steps to get started using the **Oracle Autonomous Data Warehouse Database (ADW)**. You will provision a new database in just a few minutes.
+This workshop walks you through the steps to get started using the **Oracle Autonomous Data Warehouse Database (ADW)**. You will provision a new database in just a few minutes and you will create a new user.
 
 Oracle Autonomous Databases have the following characteristics:
 
@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
 
-    ![Oracle Cloud Web Console](https://raw.githubusercontent.com/oracle/learning-library/master/common/images/console/database-adw.png " ")
+    ![Select Autonomous Data Warehouse](./images/select_autonomous.png)
 
     This will take you to the management console page.
 
@@ -53,9 +53,9 @@ Estimated Lab Time: 15 minutes.
     By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
     By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
 
-    - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `MODERN_DATAWAREHOUSE`.
+    - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `MODERNDW`.
         ```
-        <copy>MODERN_DATAWAREHOUSE</copy>
+        <copy>MODERNDW</copy>
         ```
     
     - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
@@ -73,7 +73,7 @@ Estimated Lab Time: 15 minutes.
 
     To learn more about Always Free check the following [link](https://www.oracle.com/uk/cloud/free/#always-free).
 
-    ![ADB Creation Details](./images/adw-creation-details.png)
+    ![ADB Creation Details](./images/adb-creation1.png)
 
     - **Choose Database version:** 19c
     
@@ -87,7 +87,7 @@ Estimated Lab Time: 15 minutes.
     
     - **Storage Auto scaling:** Off
 
-    ![ADB Creation Storage](./images/adw-db-version-new.png)
+    ![ADB Creation Storage](./images/adb-creation2.png)
 
 3. Under **Create administration credentials** section:
 
@@ -99,17 +99,17 @@ Estimated Lab Time: 15 minutes.
 
     - Select **'Secure access from everywhere'**: *On*
     
-    ![ADB Creation Password](./images/adw-db-password-new.png)
+    ![ADB Creation Password](./images/adb-creation3.png)
 
 4. Under **Choose a license type** section, choose **License Type: Licence Included**.
 
     When you have completed the required fields, scroll down and click on the blue **Create Autonomous Database** button at the bottom of the form:
 
-    ![ADB Creation](./images/adw-db-license-type.png)
+    ![ADB Creation](./images/adb-creation4.png)
 
 5. The Autonomous Database **Details** page will show information about your new instance. You should notice the various menu buttons that help you manage your new instance - because the instance is currently being provisioned all the management buttons are greyed out.
 
-    ![ADB Creation Provisioning](./images/adw-provisioning.png)
+    ![ADB Creation Provisioning](./images/adb-provisioning.png)
 
 6. A summary of your instance status is shown in the large box on the left. In this example, the color is amber and the status is **Provisioning**.
 
@@ -127,7 +127,7 @@ Estimated Lab Time: 15 minutes.
 
     This page is known as the **Autonomous Database Details Page**. It provides you with status information about your database, and its configuration. Get **familiar** with the buttons and tabs on this page.
 
-    ![ADB Creation Details](./images/adw-ready.png)
+    ![ADB Creation Details](./images/adb-provisioned.png)
 
     Remember: You will have visible the Always Free logo next to the name of your database:
 

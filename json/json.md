@@ -51,7 +51,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 7. We should see the JSON file there.
 
-    ![Select Bucket](./images/file-uploaded.png)
+    ![Select Bucket](./images/file-uploaded.PNG)
     
 
 

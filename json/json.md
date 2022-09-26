@@ -230,7 +230,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             select json_serialize(json_document) from sample_tweets;
         </copy>
 
-    ![Select count](./images/json-serialize.png)
+    ![Select all](./images/json-serialize.png)
 
 3. Oracle provides the capability for showing the JSON like a table, we can run a simple query using the dot notation. Let's query some fields.
 

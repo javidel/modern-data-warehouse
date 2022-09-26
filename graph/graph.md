@@ -83,7 +83,27 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Select upload](./images/load-json.png)
 
-## Task 2: Create a VCN for the Graph Server.
+## Task 2: Create a VCN for the Graph Server
+
+1. We need to create a Virtual Cloud Network (VCN) before we provision the Graph Server. Go to Networking and then Virtual Cloud Network.
+
+    ![Find VCN](./images/find-vcn.png)
+
+2. Click on **Start VCN Wizard**
+
+    ![VCN Wizard](./images/vcn-wizard.png)
+
+3. Select **Create VCN with Internet Connectivity** and click on **Start VCN Wizard**
+
+    ![StartVCN Wizard](./images/start-wizard.png)
+
+4. Define the VCN Name as **vcn_graph**. Then click on **Next**.
+
+    ![StartVCN 1](./images/vcn1.png)
+
+5. Keep the default configuration. Click on **Create**
+
+    ![StartVCN 2](./images/create-vcn.png)
 
 ## Task 3: Create Oracle Graph Server
 

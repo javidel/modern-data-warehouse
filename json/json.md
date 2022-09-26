@@ -230,7 +230,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             select json_serialize(json_document) from sample_tweets;
         </copy>
 
-    ![Select all](./images/json-serialize.png)
+    ![Select serialize](./images/json-serialize.png)
 
 3. Oracle provides the capability for showing the JSON like a table, we can run a simple query using the dot notation. Let's query some fields.
 
@@ -241,7 +241,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
         </copy>
 
-    ![Select count](./images/query-fields.png)
+    ![Select fields](./images/query-fields.png)
 
 4. Also we can use the where condition over JSON. Let's run a query filtering by tweets located in Paris.
 

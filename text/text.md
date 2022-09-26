@@ -1,66 +1,155 @@
-# Oracle Database Service for Microsoft Azure Workshop
+# Sentiment Analysis with Oracle Text
 
-![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
+
 
 ## Introduction
 
-The New Oracle Database Service for Microsoft Azure (ODSA) allows you to easily integrate Oracle Cloud Infrastructure's Database service into your Azure cloud environment. ODSA uses a service-based approach, and is an alternative to manually creating complex cross-cloud deployments for your application stacks.
+Oracle Text provides the capability of searching text using specific indices. Using this indices, we can run sentiment analysis over our tweets.
 
-Oracle Database Service for Microsoft Azure is an Oracle-managed service for Azure customers to easily provision, access, and operate enterprise-grade Oracle Database services in Oracle Cloud Infrastructure (OCI) with a familiar Azure-like experience. Users can seamlessly build Azure applications with the high performance, high availability, and automated management of Oracle Database services, such as Autonomous Database, running on OCI.
+Estimated Lab Time: 15 minutes.
 
-The service establishes low-latency connectivity between Microsoft Azure and OCI, deploys Oracle Database on OCI, and provides metrics on Azure. Customers can combine the full Azure catalog of AI and application services with OCI’s most powerful database services. There are no charges for the interconnect ports or data ingress/egress over the interconnect. You will be billed normally for consumption of Oracle Database services like Autonomous Database.
-
-- **Run your workloads where you choose**. Choose the best cloud provider for your applications and databases. Run mission-critical enterprise workloads across OCI and Microsoft Azure.
-
-- **Build with Oracle on Azure**. Build new applications by combining Azure services with the high performance, high availability, and automated management of Oracle Database services on OCI.
-
-- **Use fully managed Oracle databases**. Quickly and easily use Azure applications with highly available Oracle autonomous databases that provision, tune, secure, and scale.
-
-- **OCI-exclusive database capabilities**. Use Oracle's Autonomous Database, Exadata Database Service, and Base Database Service with Real Application Clusters and other exclusive OCI capabilities.
-
-This workshop has the following parts:
-
-- Introduction
-- Getting Started
-- Account Set Up
-- Oracle Autonomous Database Provisioning
-- Overview and Tags
-- Networking
-- Backups
-
-
-**Estimated Workshop Time: 60 minutes.**
-
-## Objectives
+### Objectives
 
 In this lab, you will:
 
-* Access to Microsoft Azure Portal
-* Sync the Microsoft Azure account with Oracle Cloud Infrastructure
-* Provision Oracle Autonomous Database
-* Learn Overview and Tags dashboard
-* Learn Networking dashboard
-* Learn Backups dashboard
-
-## Prerequisites
-
-* [An Oracle Free Tier](https://bit.ly/free-tier-1207), Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
-* Microsoft Azure account
-
-Here is a video to help with the Oracle Trial Sign Up Process:
-[](youtube:4U-0SumNz6w)
-
-We are providing a basic reference to create a Microsoft Azure account. We are not pretending to be an Microsoft Azure experts or provide Azure best practices. We are using Azure account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your Microsft Azure support contact.
-
-Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Xs62xuw9UF7_P0By0FfkukpJhbDjzqC68huTdByF0KRPrsnzzLqFqP6H_YxDOJ1m/n/fruktknlrefu/b/workshop-odsa/o/Oracle%20Database%20Service%20for%20Microsoft%20Azure%20Workshop%20-%20Prerequisites.pdf) where you can find support to create the Oracle Cloud account and Microsoft Azure account.
+* Create a Oracle Text Index
+* Get sentyment from text
+* Search over text
 
 
-*At this point, you are ready to start learning! Please proceed.*
+### Prerequisites
+
+This lab assumes you have created the Autonomous Data Warehouse database and you have loaded the JSON tweets from Lab 2.
+
+## Task 1: Create materialized view over JSON data
+
+1. Before we create the Oracle Text index, we are goint to create a materialized view. We are going to take advantage of the JSON utilities. Click on **New Collection View**.
+
+    ![get view](./images/get-view.png)
+
+2. Add all the columns to the view.
+
+    ![add all columns](./images/add-all.png)
+
+3.  Click on **Test Query**.
+
+    ![Test Query](./images/test-query.png)
+
+4. Copy the view definition.
+
+    ![Copy Query](./images/copy-query.png)
+
+5. Click Close
+
+    ![Click Close](./images/click-close.png)
+
+6. Go back to SQL.
+
+    ![Click Close](./images/back-to-sql.png)
+
+7. Paste the SQL we got from JSON
+
+    ![Click Close](./images/paste-sql.png)
+
+8. At the beginning of the query, add the create materialized view statement.
+
+        <copy> 
+            create materialized view mv_tweets as 
+        </copy>
+
+    ![Select count](./images/create-view.png)
+
+9. Click on the run button to create the materialized view.
+
+    ![Select count](./images/run-view.png)
+
+10. Let's create a primary key over our materialized view. We will need it for our Oracle Text index.
+
+        <copy> 
+            ALTER TABLE mv_tweets ADD CONSTRAINT mv_tweets_pk PRIMARY KEY (id);
+        </copy>
+
+    ![Select count](./images/create-pk.png)
+
+## Task 2: Create Oracle Text Index
+
+1. Let's create the lexer
+
+        <copy> 
+            exec ctx_ddl.create_preference('review_lexer', 'AUTO_LEXER')
+        </copy>
+
+    ![Create Lexer](./images/create-lexer.png)
+
+2. Let's create the Oracle Text index
+
+        <copy> 
+            create index sentiment_index on mv_tweets(text)
+        indextype is ctxsys.context 
+        parameters ('lexer review_lexer');
+
+        </copy>
+
+    ![Create Lexer](./images/create-index.png)
+
+## Task 3: Get Sentiment Analysis
+
+1. As we have our index created, let's have a look to the sentiment.
+
+        <copy> 
+            select ctx_doc.sentiment_aggregate(
+        index_name => 'sentiment_index',
+        textkey    => id 
+        ) sentiment,id, text
+        from mv_tweets;
+        </copy>
+
+    ![Create Lexer](./images/first-sentiment.png)
+
+2. Let's store the result into a table.
+
+        <copy> 
+            create table sentiment_results as select ctx_doc.sentiment_aggregate(
+        index_name => 'sentiment_index',
+        textkey    => id 
+        ) sentiment,id, text,name
+        from mv_tweets;
+
+        </copy>
+
+    ![Create Lexer](./images/create-table.png)
+
+3. Let's add some metadata, to identify easier which comment is negative, neutral or positive.
+
+        <copy> 
+                alter table sentiment_results add emotion varchar2(50);
+            update sentiment_results
+            set emotion = (case
+            when sentiment < 0 then 'Negative'
+            when sentiment = 0 then 'Neutral'
+            when sentiment > 0 then 'Positive'
+            end);
+            commit;
+
+        </copy>
+
+    ![Create Lexer](./images/alter-table.png)
+
+4. Finally, let's look for tweets that contain the word ship. We will look for all the tweets related to the shipping.
+
+        <copy> 
+            select * from mv_tweets
+        where contains ( text, 'shipp%' ) >0
+
+
+        </copy>
+
+    ![Create Lexer](./images/text-search.png)
 
 ## Acknowledgements
-* **Author** - Priscila Iruela, Technology Product Strategy Director
-* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, September 2022
+* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Contributors** - Priscila Iruela, Technology Product Strategy Director
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

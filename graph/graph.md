@@ -364,7 +364,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             """).print()
         </copy>
 
-    ![First Query](./images/query1.png)
+    ![First Query](./images/query1.PNG)
 
 
 ## Task 5: Find influencers
@@ -386,7 +386,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
         </copy>
 
-    ![LIst Influencers](./images/query-influencers.png)
+    ![LIst Influencers](./images/query-influencers.PNG)
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

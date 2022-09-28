@@ -302,7 +302,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             ALTER TABLE twitter_user ADD CONSTRAINT twitter_user_pk PRIMARY KEY (identifier);
         </copy>
 
-    ![Shell](./images/prepare-data.png)
+    ![Shell](./images/prepare-data.PNG)
 
 7. Now we can finally create the Graph. Let's go back to our cloud shell to connect to the Graph Server. If you have disconnected you can conenct again via ssh.
 
@@ -316,9 +316,9 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             opg4py -b https://localhost:7007 -u cnvg
         </copy>
 
-    ![Shell](./images/connect-graph.png)
+    ![Shell](./images/connect-graph.PNG)
 
-    ![Shell](./images/graph-prompt.png)
+    ![Shell](./images/graph-prompt.PNG)
 
 9. Let's define the Graph.
 
@@ -337,7 +337,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
         </copy>
 
-    ![Shell](./images/define-graph.png)
+    ![Shell](./images/define-graph.PNG)
 
 10. Let's execute the definition.
 
@@ -345,7 +345,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             session.prepare_pgql(statement).execute()
         </copy>
 
-    ![Shell](./images/execute-definition.png)
+    ![Shell](./images/execute-definition.PNG)
 
 11. Let's store the graph in a variable.
 
@@ -353,7 +353,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             graph=session.get_graph("influencer")
         </copy>
 
-    ![Shell](./images/store-variable.png)
+    ![Shell](./images/store-variable.PNG)
 
 12. Now let's run a simple query.
 

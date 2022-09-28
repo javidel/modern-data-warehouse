@@ -105,7 +105,172 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![StartVCN 2](./images/create-vcn.png)
 
+6. We need to open the port **7007** for the Graph Server. Let's go back to the VCN configuration.
+
+    ![StartVCN 3](./images/back-to-vcn.png)
+
+7. Select the just created VCN, **vcn_graph**
+
+    ![Select VCN](./images/select-vcn.png)
+
+8. Select the public vcn.
+
+    ![Select VCN](./images/select-public.png)
+
+9. Select the default Security List.
+
+    ![Select VCN](./images/default-security.png)
+
+10. Click on **Add Ingress Rule**
+
+    ![Select VCN](./images/add-ingress.png) 
+
+11. Set the following rule for opening the port 7007, then click on **Add Ingress Rules**: 
+
+    - **CIDR:** 0.0.0.0/0
+    
+    - **IP Protocol:** TCP
+
+    - **Destination Port Range:** 7007
+
+    - **Description:** Graph Server
+
+    ![Select VCN](./images/define-ingress.png) 
+
 ## Task 3: Create Oracle Graph Server
+
+1. Before we create the Graph Server, we need to generate a ssh key. For that we are going to use the cloud shell. 
+
+    ![Open Shell](./images/open-cloud-shell.png) 
+
+    ![Shell](./images/shell-open.png) 
+
+2. Once the cloud shell has started, run the following commands to generate a ssh key. Press Enter twice for no passphrase
+
+        <copy> 
+            mkdir .ssh
+        </copy>
+
+        <copy> 
+            cd .ssh
+        </copy>
+
+        <copy> 
+            ssh-keygen -b 2048 -t rsa -f graphkey
+        </copy>
+
+    ![Shell](./images/key-generated.png) 
+
+3. We will need the public key when creating the Graph Server. In order to get the public key, you can run the following command:
+
+        <copy> 
+            cat graphkey.pub
+        </copy>
+
+    ![Shell](./images/public-key-content.png) 
+
+4. Now we are ready to provision the Graph Server. We can find it in the marketplace.
+
+    ![Shell](./images/go-to-marketplace.png) 
+
+5. In the marketplace, look for **Graph**. There you can select **Oracle Graph Server and Client**.
+
+    ![Shell](./images/search-graph.png)
+
+6. Select that you had reviewed the terms and restrictions and click on **Launch Stack**.
+
+    ![Shell](./images/launch-stack.png)
+
+7. Leave the default configuration and click **Next**.
+
+    ![Shell](./images/next-launch1.png)
+
+8. Now configure the Graph Server:
+
+
+    
+    - **Availability Domain:** Choose any available
+
+    - **Shape:** VM.Standard.E2.1
+
+    - **SSH Public Key:** Copy from the cloud shell
+
+    ![Shell](./images/graph-config1.png)
+
+9. Select the VCN and the **public subnet** we already created.
+
+    ![Shell](./images/graph-config2.png)
+
+10. Finally we have to define the JDBC connection for our Autonomous Database
+
+        <copy> 
+            jdbc:oracle:thin:@moderndw_low?TNS_ADMIN=/etc/oracle/graph/wallets
+        </copy>
+    
+
+    ![Shell](./images/url-jdbc.png)
+
+11. Click on **Next**.
+
+    ![Shell](./images/next-graph.png)
+
+12. Click on **Create**.
+
+    ![Shell](./images/create-graph-server.png)
+
+13. This will create a terraform job for creating this instance.
+
+    ![Shell](./images/job-running.png)
+
+14. You should see it as succeed.
+
+    ![Shell](./images/job-finish.png)
+
+15. The Graph connect needs the Autonomous Wallet to connect. We need to download it and upload it into the Graph Server. Go to the Autonomous Database and click on **DB Connection**. 
+
+    ![Shell](./images/db-connection.png)
+
+16. Click on Download Wallet.
+
+    ![Shell](./images/download-wallet.png)
+
+17. Set the same password: **Password123##** and click download.
+
+    ![Shell](./images/set-password.png)
+
+18. Now we are going to upload the wallet to the **Cloud Shell**.
+
+    ![Shell](./images/upload-wallet.png)
+
+19. Select the wallet and click on **Upload**
+
+    ![Shell](./images/shell-upload-wallet.png)
+
+20. We are going to use SCP to move the wallet from the Cloud Shell into the Graph Server. Before we need the IP. Let's find it under compute.
+
+    ![Shell](./images/find-server.png)
+
+21. Copy the Public IP. We are going to need it for the next exercise
+
+    ![Shell](./images/copy-ip.png)
+
+22. Go back to the Cloud shell. Run the following command to copy the wallet into the Graph Server. Remember to use **YOUR IP**. 
+
+        <copy> 
+            scp -i .ssh/graphkey Wallet_MODERNDW.zip opc@YOUR_IP:/etc/oracle/graph/wallets
+        </copy>
+
+    ![Shell](./images/wallet-uploaded.png)
+    
+
+23. Now we just need to unzip it on the Graph Server. We need to connect via ssh and unzip it.
+        
+        <copy> 
+            ssh -i .ssh/graphkey opc@YOUR_IP
+        cd /etc/oracle/graph/wallets/
+        unzip Wallet_MODERNDW.zip
+        chgrp oraclegraph *
+        </copy>
 
 ## Task 4: Create a Graph
 

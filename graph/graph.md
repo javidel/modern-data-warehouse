@@ -386,7 +386,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
         </copy>
 
-    ![Shell](./images/query-influencers.png)
+    ![LIst Influencers](./images/query-influencers.png)
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

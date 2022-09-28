@@ -274,8 +274,119 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 4: Create a Graph
 
+1. The Graph Server is created, now we need to populate the Graph. For simplicity, we are going to create a simpler table of twitter users and we are going to create a view on top of the friend_of JSON Collection. Let's create the view first. Go to your Autonomous Database and click on **Database Actions**
+
+    ![Shell](./images/go-to-dbactions.png)
+
+2. Go to JSON
+
+    ![Shell](./images/select-json.png)
+
+3. Select the **friend_of** collection and click on create view.
+
+    ![Shell](./images/select-view.png)
+
+4. Add **all columns** and click on **Create**
+
+    ![Shell](./images/create-view.png)
+
+5. Go back to sql
+
+    ![Shell](./images/back-to-sql2.png)
+
+6. We need a primary for our view. Also we are going to create a simplified table for our twitter users and we are going to create a primary key too.
+
+        <copy> 
+            ALTER VIEW FRIEND_OF_VIEW ADD CONSTRAINT FRIEND_OF_VIEW_PK PRIMARY KEY ( ID ) DISABLE;
+            create table twitter_user as select name, identifier, description, location from MV_TWEETS;
+            ALTER TABLE twitter_user ADD CONSTRAINT twitter_user_pk PRIMARY KEY (identifier);
+        </copy>
+
+    ![Shell](./images/prepare-data.png)
+
+7. Now we can finally create the Graph. Let's go back to our cloud shell to connect to the Graph Server. If you have disconnected you can conenct again via ssh.
+
+        <copy> 
+            ssh -i .ssh/graphkey opc@YOUR_IP
+        </copy>
+
+8. Let's connect with the **opg4py** utility. We are going to use the **cnvg** user and the password **Password123##**
+
+        <copy> 
+            opg4py -b https://localhost:7007 -u cnvg
+        </copy>
+
+    ![Shell](./images/connect-graph.png)
+
+    ![Shell](./images/graph-prompt.png)
+
+9. Let's define the Graph.
+
+        <copy> 
+            statement = '''
+            CREATE PROPERTY GRAPH "influencer"
+            VERTEX TABLES (
+            TWITTER_USER
+            )
+            EDGE TABLES (
+            friend_of_view
+            SOURCE KEY(user_id) REFERENCES TWITTER_USER
+            DESTINATION KEY(is_frend_of) REFERENCES TWITTER_USER
+            )
+            '''
+
+        </copy>
+
+    ![Shell](./images/define-graph.png)
+
+10. Let's execute the definition.
+
+        <copy> 
+            session.prepare_pgql(statement).execute()
+        </copy>
+
+    ![Shell](./images/execute-definition.png)
+
+11. Let's store the graph in a variable.
+
+        <copy> 
+            graph=session.get_graph("influencer")
+        </copy>
+
+    ![Shell](./images/store-variable.png)
+
+12. Now let's run a simple query.
+
+        <copy> 
+            graph.query_pgql("""
+            SELECT a.name,a.description, a.location,b.name as "friend of"
+            FROM MATCH (a)-[e]->(b)
+            """).print()
+        </copy>
+
+    ![Shell](./images/query1.png)
+
+
 ## Task 5: Find influencers
 
+1. As we have the Graph loaded, let's use the Page Rank ALgorithm to determine influencers in our community.
+
+        <copy> 
+            analyst.pagerank(graph)
+        </copy>
+
+2. Now let's see the results. Let's run a simple query.
+
+        <copy> 
+            graph.query_pgql("""
+            SELECT a.name,a.description, a.pagerank
+            FROM MATCH (a)
+            ORDER BY a.pagerank DESC
+            """).print()
+
+        </copy>
+
+    ![Shell](./images/query-influencers.png)
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

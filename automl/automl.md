@@ -23,13 +23,108 @@ In this lab, you will:
 This lab assumes you have created the Autonomous Data Warehouse database in the previous lab.
 
 ## Task 1: Prepare the data
+
+1. Oracle AutoML requires an unique table to understand how the data is related and to define the column to predict. For that we are going to create an unique table called **dw_table**. Go to SQL and run the following statement. Remember, you need to be the **CNVG** user and not the admin user.
+
+        <copy> 
+                create table dw_table as
+            select a.*,b.sentiment,b.emotion
+            from revenue a, SENTIMENT_RESULTS b
+            where a.cust_key=b.name;
+        </copy>
+
+    ![Create Warehouse](./images/create-dw-table.png)
+
 ## Task 2: Create the Model
-## Task 3: Store the model inside the Autonomous Database
+
+1. As we have our data ready, let's create our Machine Learning Model. Go to your Autonomous Database and click on **Tools** and then **Oracle ML User Administration**.
+
+    ![Create Warehouse](./images/open-ml.png)
+
+2. Log in with the **ADMIN** user.
+
+    - **Username:** ADMIN
+    
+    - **Password:** Password123##
+
+    ![Create Warehouse](./images/log-in.png)
+
+3. You will see that the **CNVG** user is already there. Click the **Home** button to log-in into the AutoML page.
+
+    ![Create Warehouse](./images/go-home.png)
+
+4. Now we can log in with the **CNVG** user.
+
+    - **Username:** CNVG
+    
+    - **Password:** Password123##
+
+    ![Create Warehouse](./images/login-automl.png)
+
+5. Select AutoML Experiments
+
+    ![Create Warehouse](./images/select-automl.png)
+
+6. Click on **Create**
+
+  ![Create Warehouse](./images/create-experiment.png)
+
+7. Let's define our experiment. Fill the following information:
+
+    - **Name:** Predict Churn
+    
+    - **Data Source:** DW_TABLE
+
+    - **Predict:** AFFINITY_CARD
+
+    - **Case ID:** CUST_KEY
+
+  ![Create Warehouse](./images/prepare-model.png)
+
+8. We don't need to fill more information, click on **Start** and select **Faster Results** 
+
+  ![Create Warehouse](./images/faster-results.png)
+
+9. Once it is finish, we can see which are the columns or features that have bigger impact in our model. We can see that emotion is very important.
+
+  ![Create Warehouse](./images/importance.PNG)
+
+## Task 3: Store and Query the model inside the Autonomous Database
+
+1. Once the job has finished, we can see the result and compare the different algorithms. Note: we see a 100% accuracy. Consider that it is a small dataset built for demo purposes. Let's select the Decission Tree Model and let's create a Notebook.
+
+  ![Create Warehouse](./images/create-notebook.png)
+
+2. Click OK
+
+  ![Create Warehouse](./images/click-ok.png)
+
+3. Click on Open Notebook
+
+  ![Create Warehouse](./images/open-notebook.png)
+
+4. We need to define the name of the model to be stored inside of the database. For that we need to add a new parameter called **model___name** in the box called **Build MODEL_NAME_TITLE model**. You can copy from here. Once you have add it, you can click on the play button to run all the paragraphs.
+
+        <copy> 
+                ,model_name='CHURN_MODEL'
+        </copy>
+
+  ![Create Warehouse](./images/store-model.png)
+
+5. We can validate if our model has been stored inside of the database. We are going to run a simple query, finding from our customer if they are likely to have our affinity card and their probability.
+
+        <copy> 
+                select AFFINITY_CARD,cust_key,PREDICTION(cnvg.churn_model USING *),PREDICTION_PROBABILITY(cnvg.churn_model USING *) 
+            from dw_table
+
+        </copy>
+
+  ![Create Warehouse](./images/query-model.PNG)
 
 ## Acknowledgements
-* **Author** - Priscila Iruela, Technology Product Strategy Director
-* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, September 2022
+* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Contributors** - Priscila Iruela, Technology Product Strategy Director
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

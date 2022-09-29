@@ -143,7 +143,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Open Shell](./images/open-cloud-shell.png) 
 
-    ![Shell](./images/shell-open.png) 
+    ![Shell](./images/shell-open.PNG) 
 
 2. Once the cloud shell has started, run the following commands to generate a ssh key. Press Enter twice for no passphrase
 
@@ -208,7 +208,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     
 
-    ![Shell](./images/url-jdbc.png)
+    ![Shell](./images/url-jdbc.PNG)
 
 11. Click on **Next**.
 
@@ -220,11 +220,11 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 13. This will create a terraform job for creating this instance.
 
-    ![Shell](./images/job-running.png)
+    ![Shell](./images/job-running.PNG)
 
 14. You should see it as succeed.
 
-    ![Shell](./images/job-finish.png)
+    ![Shell](./images/job-finish.PNG)
 
 15. The Graph connect needs the Autonomous Wallet to connect. We need to download it and upload it into the Graph Server. Go to the Autonomous Database and click on **DB Connection**. 
 

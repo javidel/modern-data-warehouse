@@ -111,12 +111,95 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 3: Try to do data tampering
 
+1. Now that we have the data loaded, let's go to SQL to run some queries.
+
+    ![Back SQL](./images/back-sql.png)
+
+2. Let's have a look into the new revenue data. You will see information about many transactions.
+
+        <copy> 
+            select * from revenue
+        </copy>
+
+    ![Select Revenue](./images/select-revenue.png)
+
+3. We can have a look to see how many rows do we have
+
+        <copy> 
+            select count(*)  from revenue
+        </copy>
+        
+    ![Count Revenue](./images/count-revenue.png)
+
+4. We can easily identify how many Blockchain tables we have in our schema.
+
+        <copy> 
+            select * from user_blockchain_tables
+        </copy>
+        
+    ![List Tables](./images/list-tables.png)
+
+5. Blockchain tables has some hidden columns. They are used to implement sequencing of rows and verify that data is tamper-resistant. Hidden columns can only be displayed by explicitly including the column names in the query.
+
+        <copy> 
+            SELECT table_name, internal_column_id ,column_name, data_type, data_length 
+            FROM user_tab_cols
+            where table_name='REVENUE'
+            ORDER BY internal_column_id;
+
+        </copy>
+        
+    ![Hidden Columns](./images/hidden-columns.png)
+
+6. Let's query that hidden columns.
+
+        <copy> 
+           select order_key, cust_key,  ORABCTAB_INST_ID$,
+            ORABCTAB_CHAIN_ID$, ORABCTAB_SEQ_NUM$,
+            ORABCTAB_CREATION_TIME$, ORABCTAB_USER_NUMBER$,
+            ORABCTAB_HASH$, ORABCTAB_SIGNATURE$, ORABCTAB_SIGNATURE_ALG$,
+            ORABCTAB_SIGNATURE_CERT$ from revenue;
+        </copy>
+        
+    ![Query Columns](./images/query-hidden.png)
+
+7. Now that we have all the info about the Blockchain table, let's try to run an update.
+
+        <copy> 
+           update revenue set order_key=1 where order_key=2;
+        </copy>
+        
+    ![UPdate Table](./images/update-table.png)
+
+8. Now let's try to drop the table.
+
+        <copy> 
+           drop table revenue;
+        </copy>
+        
+    ![Drop Table](./images/drop-table.png)
+
 ## Task 4: Validate data
 
+1. Oracle provides a validation procedure to ensure that our data has not been tampered or modified, breaking the blockchain table definition. We can run the following code.
+
+        <copy> 
+           declare
+           total_rows      number;
+           verify_rows NUMBER;
+        begin
+            select count(*) into total_rows from revenue;
+            dbms_blockchain_table.verify_rows('CNVG','REVENUE',number_of_rows_verified => verify_rows);
+            dbms_output.put_line(' Total of Rows=' || total_rows || '  Verified Rows=' || verify_rows);
+        end;
+        </copy>
+        
+    ![Validate Table](./images/validate-table.png)
+
 ## Acknowledgements
-* **Author** - Priscila Iruela, Technology Product Strategy Director
-* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, September 2022
+* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Contributors** - Priscila Iruela, Technology Product Strategy Director
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

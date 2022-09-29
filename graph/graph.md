@@ -388,10 +388,37 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![LIst Influencers](./images/query-influencers.PNG)
 
+3. Now let's store the result in a variable. We will use this variable to store the result back into the Oracle Database.
+
+        <copy> 
+            result= graph.query_pgql("""
+            SELECT a.name,a.description, a.pagerank
+            FROM MATCH (a)
+            ORDER BY a.pagerank DESC
+            """)
+        </copy>
+
+    ![Store result](./images/result.PNG)
+
+4. Let's store the result in our Autonomous Database. We are going to store it in a new table called **Influencers**. For that, run the following command:
+
+        <copy> 
+            result.to_frame().write().db().table_name("INFLUENCERS").overwrite(True).owner("CNVG").store()
+        </copy>
+
+5. If we go back to SQL, we should be able to run a simple query over that table.
+
+        <copy> 
+            select * from INFLUENCERS order by 3 desc 
+        </copy>
+
+    ![Show Influencers table](./images/show-influencers.PNG)
+
+
 ## Acknowledgements
-* **Author** - Priscila Iruela, Technology Product Strategy Director
-* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, September 2022
+* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Contributors** - Priscila Iruela, Technology Product Strategy Director
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

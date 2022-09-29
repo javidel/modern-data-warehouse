@@ -85,7 +85,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 3. Select our revenue.csv file.
 
-    ![Select File](./images/select-file.png)
+    ![Select File](./images/select-file.PNG)
 
 4. Once it is selected, we are going to define into which table we want to load. Click on the **edit** button.
 
@@ -107,7 +107,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 7. You should see no error when loading
 
-    ![data loaded](./images/data-loaded.png)
+    ![data loaded](./images/data-loaded.PNG)
 
 ## Task 3: Try to do data tampering
 

@@ -1,61 +1,117 @@
-# Oracle Database Service for Microsoft Azure Workshop
+# Load Transactional Data on Blockchain Table
 
-![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
 
 ## Introduction
 
-The New Oracle Database Service for Microsoft Azure (ODSA) allows you to easily integrate Oracle Cloud Infrastructure's Database service into your Azure cloud environment. ODSA uses a service-based approach, and is an alternative to manually creating complex cross-cloud deployments for your application stacks.
+Blockchain tables are append-only tables in which only insert operations are allowed. Deleting rows is either prohibited or restricted based on time. Rows in a blockchain table are made tamper-resistant by special sequencing and chaining algorithms. Users can verify that rows have not been tampered. A hash value that is part of the row metadata is used to chain and validate rows.
 
-Oracle Database Service for Microsoft Azure is an Oracle-managed service for Azure customers to easily provision, access, and operate enterprise-grade Oracle Database services in Oracle Cloud Infrastructure (OCI) with a familiar Azure-like experience. Users can seamlessly build Azure applications with the high performance, high availability, and automated management of Oracle Database services, such as Autonomous Database, running on OCI.
+In this Lab you will use Blockchain Tables to store transactional data to ensure data has not been any data tampering.
 
-The service establishes low-latency connectivity between Microsoft Azure and OCI, deploys Oracle Database on OCI, and provides metrics on Azure. Customers can combine the full Azure catalog of AI and application services with OCI’s most powerful database services. There are no charges for the interconnect ports or data ingress/egress over the interconnect. You will be billed normally for consumption of Oracle Database services like Autonomous Database.
+Estimated Lab Time: 15 minutes.
 
-- **Run your workloads where you choose**. Choose the best cloud provider for your applications and databases. Run mission-critical enterprise workloads across OCI and Microsoft Azure.
-
-- **Build with Oracle on Azure**. Build new applications by combining Azure services with the high performance, high availability, and automated management of Oracle Database services on OCI.
-
-- **Use fully managed Oracle databases**. Quickly and easily use Azure applications with highly available Oracle autonomous databases that provision, tune, secure, and scale.
-
-- **OCI-exclusive database capabilities**. Use Oracle's Autonomous Database, Exadata Database Service, and Base Database Service with Real Application Clusters and other exclusive OCI capabilities.
-
-This workshop has the following parts:
-
-- Introduction
-- Getting Started
-- Account Set Up
-- Oracle Autonomous Database Provisioning
-- Overview and Tags
-- Networking
-- Backups
-
-
-**Estimated Workshop Time: 60 minutes.**
-
-## Objectives
+### Objectives
 
 In this lab, you will:
 
-* Access to Microsoft Azure Portal
-* Sync the Microsoft Azure account with Oracle Cloud Infrastructure
-* Provision Oracle Autonomous Database
-* Learn Overview and Tags dashboard
-* Learn Networking dashboard
-* Learn Backups dashboard
-
-## Prerequisites
-
-* [An Oracle Free Tier](https://bit.ly/free-tier-1207), Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
-* Microsoft Azure account
-
-Here is a video to help with the Oracle Trial Sign Up Process:
-[](youtube:4U-0SumNz6w)
-
-We are providing a basic reference to create a Microsoft Azure account. We are not pretending to be an Microsoft Azure experts or provide Azure best practices. We are using Azure account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your Microsft Azure support contact.
-
-Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Xs62xuw9UF7_P0By0FfkukpJhbDjzqC68huTdByF0KRPrsnzzLqFqP6H_YxDOJ1m/n/fruktknlrefu/b/workshop-odsa/o/Oracle%20Database%20Service%20for%20Microsoft%20Azure%20Workshop%20-%20Prerequisites.pdf) where you can find support to create the Oracle Cloud account and Microsoft Azure account.
+* Create a Blockchain Table
+* Load Data into Blockchain table
+* Learn about Blockchain table characteristics
+* Validate a Blockchain table
 
 
-*At this point, you are ready to start learning! Please proceed.*
+### Prerequisites
+
+This lab assumes you have created the Autonomous Data Warehouse database in the previous lab.
+
+## Task 1: Create Blockchain Table
+
+1. Let's create the Blockchain table. For that we need go go to SQL. We can find it in Database Actions.
+
+    ![Go to DB Actions](./images/go-dbactions.png)
+
+2. Select SQL. Remember, validate we are the **CNVG** user and not the ADMIN user.
+
+    ![Select SQL](./images/select-sql.png)
+
+3. Copy the following create table statement, which contains the blockchain table:
+
+        <copy> CREATE BLOCKCHAIN TABLE REVENUE
+            (    "SHIPTO_ADDR_KEY" NUMBER, 
+            "OFFICE_KEY" NUMBER, 
+            "EMPL_KEY" NUMBER, 
+            "PROD_KEY" NUMBER, 
+            "ORDER_KEY" NUMBER, 
+            "UNITS" NUMBER, 
+            "DISCNT_VALUE" NUMBER, 
+            "BILL_MTH_KEY" NUMBER, 
+            "BILL_QTR_KEY" NUMBER, 
+            "BILL_DAY_DT" TIMESTAMP (6), 
+            "ORDER_DAY_DT" TIMESTAMP (6), 
+            "PAID_DAY_DT" TIMESTAMP (6), 
+            "DISCNT_RATE" NUMBER, 
+            "ORDER_STATUS" VARCHAR2(64 BYTE) , 
+            "CURRENCY" VARCHAR2(64 BYTE) , 
+            "ORDER_TYPE" VARCHAR2(64 BYTE) , 
+            "SHIP_DAY_DT" TIMESTAMP (6), 
+            "COST_FIXED" NUMBER, 
+            "COST_VARIABLE" NUMBER, 
+            "SRC_ORDER_NUMBER" VARCHAR2(32767 BYTE) , 
+            "ORDER_NUMBER" NUMBER, 
+            "REVENUE" NUMBER, 
+            "ORDER_DTIME2_TIMEZONE" VARCHAR2(64 BYTE) , 
+            "AFFINITY_CARD" NUMBER, 
+            "ALREADY_BAD_COMMENTS" NUMBER, 
+            "CUST_KEY" VARCHAR2(64 BYTE) 
+            )  
+            NO DROP UNTIL 16 DAYS IDLE
+            NO DELETE LOCKED
+            HASHING USING "SHA2_512" VERSION "v1";
+
+        </copy>
+
+4. Pase it over SQL, and click on run.
+
+    ![Create table](./images/create-table.png)
+
+## Task 2: Load data into Blockchain table
+
+1. Let's load the data, select the **Data Load** from the menu.
+
+    ![Load Data](./images/select-load.png)
+
+2. We are going to upload our local file. Select this option and click next.
+
+    ![Define Local](./images/define-local.png)
+
+3. Select our revenue.csv file.
+
+    ![Select File](./images/select-file.png)
+
+4. Once it is selected, we are going to define into which table we want to load. Click on the **edit** button.
+
+    ![Modify Load](./images/modify-load.png)
+
+5. Modify the table insert. Once it is modified, you can click close.
+
+    - **Option:** Insert into table
+    
+    - **Name:** Revenue
+
+    ![Set Definition](./images/set-definition.png)
+
+6. Now you can click on **run** to load the data into the blockchain table.
+
+    ![Load Data](./images/load-data.png)
+
+    ![run load](./images/run-load.png)
+
+7. You should see no error when loading
+
+    ![data loaded](./images/data-loaded.png)
+
+## Task 3: Try to do data tampering
+
+## Task 4: Validate data
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

@@ -24,6 +24,22 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Create Warehouse Table
 
+1. We are going to create a new table. This table is going to store the location of our warehouses where we ship the products to our customers. Copy the following SQL and execute it.
+
+        <copy> 
+                create table my_warehouse(
+            id number,
+            city varchar2(50),
+            latitude number,
+            longitude number
+            );
+            insert into MY_WAREHOUSE values (1, 'Frankfurt', 50.110307329549634, 8.68548127192586);
+            insert into MY_WAREHOUSE values (2, 'Dusseldorf', 51.228071678687535, 6.770907365667318);
+            commit;
+        </copy>
+
+    ![Create Warehouse](./images/create-warehouse.png)
+
 ## Task 2: Create Spatial function for latitude and longitude
 
 ## Task 3: Analyze distance using the location

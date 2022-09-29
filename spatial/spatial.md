@@ -1,61 +1,33 @@
-# Oracle Database Service for Microsoft Azure Workshop
+# Use Spatial to analyze tweets location
 
-![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
 
 ## Introduction
 
-The New Oracle Database Service for Microsoft Azure (ODSA) allows you to easily integrate Oracle Cloud Infrastructure's Database service into your Azure cloud environment. ODSA uses a service-based approach, and is an alternative to manually creating complex cross-cloud deployments for your application stacks.
+Oracle's spatial database is included in Oracle's converged database, allowing developers and analysts to get started easily with location intelligence analytics and mapping services. Organizations can manage different types of geospatial data, perform hundreds of spatial analytic operations, and use interactive map visualization tools with the spatial features in Oracle Autonomous Database and Oracle Database.
 
-Oracle Database Service for Microsoft Azure is an Oracle-managed service for Azure customers to easily provision, access, and operate enterprise-grade Oracle Database services in Oracle Cloud Infrastructure (OCI) with a familiar Azure-like experience. Users can seamlessly build Azure applications with the high performance, high availability, and automated management of Oracle Database services, such as Autonomous Database, running on OCI.
+In this lab we are going to analyze the tweets location and compare them with our warehouses location to get new insights.
 
-The service establishes low-latency connectivity between Microsoft Azure and OCI, deploys Oracle Database on OCI, and provides metrics on Azure. Customers can combine the full Azure catalog of AI and application services with OCI’s most powerful database services. There are no charges for the interconnect ports or data ingress/egress over the interconnect. You will be billed normally for consumption of Oracle Database services like Autonomous Database.
+Estimated Lab Time: 15 minutes.
 
-- **Run your workloads where you choose**. Choose the best cloud provider for your applications and databases. Run mission-critical enterprise workloads across OCI and Microsoft Azure.
-
-- **Build with Oracle on Azure**. Build new applications by combining Azure services with the high performance, high availability, and automated management of Oracle Database services on OCI.
-
-- **Use fully managed Oracle databases**. Quickly and easily use Azure applications with highly available Oracle autonomous databases that provision, tune, secure, and scale.
-
-- **OCI-exclusive database capabilities**. Use Oracle's Autonomous Database, Exadata Database Service, and Base Database Service with Real Application Clusters and other exclusive OCI capabilities.
-
-This workshop has the following parts:
-
-- Introduction
-- Getting Started
-- Account Set Up
-- Oracle Autonomous Database Provisioning
-- Overview and Tags
-- Networking
-- Backups
-
-
-**Estimated Workshop Time: 60 minutes.**
-
-## Objectives
+### Objectives
 
 In this lab, you will:
 
-* Access to Microsoft Azure Portal
-* Sync the Microsoft Azure account with Oracle Cloud Infrastructure
-* Provision Oracle Autonomous Database
-* Learn Overview and Tags dashboard
-* Learn Networking dashboard
-* Learn Backups dashboard
-
-## Prerequisites
-
-* [An Oracle Free Tier](https://bit.ly/free-tier-1207), Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
-* Microsoft Azure account
-
-Here is a video to help with the Oracle Trial Sign Up Process:
-[](youtube:4U-0SumNz6w)
-
-We are providing a basic reference to create a Microsoft Azure account. We are not pretending to be an Microsoft Azure experts or provide Azure best practices. We are using Azure account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your Microsft Azure support contact.
-
-Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Xs62xuw9UF7_P0By0FfkukpJhbDjzqC68huTdByF0KRPrsnzzLqFqP6H_YxDOJ1m/n/fruktknlrefu/b/workshop-odsa/o/Oracle%20Database%20Service%20for%20Microsoft%20Azure%20Workshop%20-%20Prerequisites.pdf) where you can find support to create the Oracle Cloud account and Microsoft Azure account.
+* Create warehouse table
+* Create Spatial function to use latitude and longitude
+* Query distance among users and warehouses
 
 
-*At this point, you are ready to start learning! Please proceed.*
+### Prerequisites
+
+This lab assumes you have created the Autonomous Data Warehouse database in the previous lab.
+
+## Task 1: Create Warehouse Table
+
+## Task 2: Create Spatial function for latitude and longitude
+
+## Task 3: Analyze distance using the location
+
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

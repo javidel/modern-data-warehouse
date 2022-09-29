@@ -36,7 +36,7 @@
             "filename": "./../../blockchain/blockchain.md"
         },
         {
-            "title": "Lab 6: Spatial - Analyze if bad comments are far from the warehouse",
+            "title": "Lab 6: Use Spatial to analyze tweets location",
             "description": "In this Lab you will analyse using Spatial if bad comments are far from the warehouse.",
             "filename": "./../../spatial/spatial.md"
         },

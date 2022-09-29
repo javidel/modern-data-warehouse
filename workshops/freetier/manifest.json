@@ -48,7 +48,7 @@
         {
             "title": "Lab 8: APEX - show the customers willing to churn and visualize the influencers",
             "description": "In this Lab you will show the customers willing to churn and visualize the influencers by using APEX.",
-            "filename": "./../../automl/apex.md"
+            "filename": "./../../apex/apex.md"
         },
         {
             "title": "Need Help?",

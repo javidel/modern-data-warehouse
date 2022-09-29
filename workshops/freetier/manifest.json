@@ -41,8 +41,8 @@
             "filename": "./../../spatial/spatial.md"
         },
         {
-            "title": "Lab 7: AutoML - Combine Ecommerce Transactional data with Tweeter info",
-            "description": "In this Lab you will combine Ecommerce Transactional data with Tweeter info, to predict if customer is going to 'churn' by cancelling their premium card.",
+            "title": "Lab 7: Predict Customer Churn with AutoML",
+            "description": "In this Lab you will combine Ecommerce Transactional data with Twitter info, to predict if customer is going to 'churn' by cancelling their premium card.",
             "filename": "./../../automl/automl.md"
         },
         {

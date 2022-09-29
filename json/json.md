@@ -230,7 +230,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             select json_serialize(json_document) from sample_tweets;
         </copy>
 
-    ![Select serialize](./images/json-serialize.png)
+    ![Select serialize](./images/json-serialize.PNG)
 
 3. Oracle provides the capability for showing the JSON like a table, we can run a simple query using the dot notation. Let's query some fields.
 
@@ -241,7 +241,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
         </copy>
 
-    ![Select fields](./images/query-fields.png)
+    ![Select fields](./images/query-fields.PNG)
 
 4. Also we can use the where condition over JSON. Let's run a query filtering by tweets located in Paris.
 
@@ -251,7 +251,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         where s.json_document.location='Paris'
         </copy>
 
-    ![Select count](./images/query-paris.png)
+    ![Select count](./images/query-paris.PNG)
 
 5. If you feel more confortable with JSON, we can use the Query by Example directy on JSON. Let's run a simple query. Let's go to the JSON utility.
 
@@ -263,7 +263,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             {"id":510}
         </copy>
 
-    ![Select id](./images/query-id.png)
+    ![Select id](./images/query-id.PNG)
 
 7. Let's query for all the tweets not located in Paris.
 
@@ -271,7 +271,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             {"location" : {"$not" : {"$eq" : "Paris"}}}
         </copy>
 
-    ![Select id](./images/query-not-paris.png)
+    ![Select id](./images/query-not-paris.PNG)
 
 
 You can proceed to the next lab.

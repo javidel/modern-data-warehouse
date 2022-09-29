@@ -49,7 +49,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 7. Paste the SQL we got from JSON
 
-    ![Click Close](./images/paste-sql.png)
+    ![Click Close](./images/paste-sql.PNG)
 
 8. At the beginning of the query, add the create materialized view statement.
 

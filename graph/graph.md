@@ -24,51 +24,53 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 1: Load Friends JSON Data
 
-1. We have a new dataset which has information about twitter's users followers. We are going to use this data to build a graph. First we need to upload this file into the object storage. Go to **storage** and **buckets**
+1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json)
+
+2. We have a new dataset which has information about twitter's users followers. We are going to use this data to build a graph. First we need to upload this file into the object storage. Go to **storage** and **buckets**
 
     ![Go to Storage](./images/go-to-storage.png)
 
-2. Select our **json_data** bucket.
+3. Select our **json_data** bucket.
 
     ![Select Bucket](./images/select-bucket.png)
 
-3. Click on **Upload** button.
+4. Click on **Upload** button.
 
     ![Select upload](./images/select-upload.png)
 
-4. Select the friend_of.json and click upload.
+5. Select the friend_of.json and click upload.
 
     ![Select upload](./images/upload-json.png)
 
-5. Click close.
+6. Click close.
 
     ![Select upload](./images/click-close.png)
 
-6. Let's get the URL of the JSON Object. We will need it for later.
+7. Let's get the URL of the JSON Object. We will need it for later.
 
     ![Select upload](./images/view-object-details.png)
 
-7. **Store** the URL for later usage.
+8. **Store** the URL for later usage.
 
     ![Select upload](./images/get-url.png)
 
-8. We need to go back to JSON. Let's create a new JSON Collection.
+9. We need to go back to JSON. Let's create a new JSON Collection.
 
     ![Select upload](./images/back-to-json.png)
 
-9. Click on create new collection.
+10. Click on create new collection.
 
     ![Select upload](./images/new-collection.png)
 
-10. Set the new name for the collection as **friend_of** and click **create**.
+11. Set the new name for the collection as **friend_of** and click **create**.
 
     ![Select upload](./images/create-collection.png)
 
-11. Go back to SQL, for loading the data.
+12. Go back to SQL, for loading the data.
 
     ![Select upload](./images/back-to-sql.png)
 
-12. Load the JSON using the COPY_COLLECTION utility.
+13. Load the JSON using the COPY_COLLECTION utility.
 
         <copy> BEGIN 
             DBMS_CLOUD.COPY_COLLECTION(    

@@ -25,31 +25,33 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Upload JSON tweets into Object Storage
 
-1. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket.
+1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/JSON_Full_tweets.json "download")
+
+2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket.
 
     ![Go to Buckets](./images/create-bucket.png)
 
-2. Click on **Create Bucket**
+3. Click on **Create Bucket**
 
     ![Create Bucket](./images/create-bucket2.png)
 
-3. Set the name for the bucket. We are going to call it **json_data**. Then click the **create** button.
+4. Set the name for the bucket. We are going to call it **json_data**. Then click the **create** button.
 
     ![Define Bucket](./images/create-bucket3.png)
 
-4. Select the **json_data** bucket.
+5. Select the **json_data** bucket.
 
     ![Select Bucket](./images/select-bucket.png)
 
-5. Click on the **upload** button.
+6. Click on the **upload** button.
 
     ![Select Bucket](./images/select-upload.png)
 
-6. Select the JSON file we just downloaded and then click on **upload**
+7. Select the JSON file we just downloaded and then click on **upload**
 
     ![Select Bucket](./images/upload-json.png)
 
-7. We should see the JSON file there.
+8. We should see the JSON file there.
 
     ![Select Bucket](./images/file-uploaded.PNG)
     

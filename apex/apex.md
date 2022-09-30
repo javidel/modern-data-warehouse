@@ -141,10 +141,48 @@ As you can see, we haven't defined the fourth chart. Let's modify that chart in 
 
 ![Select SQL](./images/dashboard-page.png)
 
+2. Look for the component Chart 4 that we didn't configure before and select it.
+
+![Select SQL](./images/select-chart4.png)
+
+You will see the default configuration for the chart at the right part of the window. 
+
+![Select SQL](./images/default-config.PNG)
+
+3. We need to set the new parameters. We are going to use the Machine Learning algorithm we got from the AutoML lab. You need to modify the following:
+
+    - **Title:** Possible new customers
+
+    - **Type:** Classic Report
+
+    - **Location:** Local Database
+
+    - **Type:** SQL Query
+
+    - **Query:** 
+
+            <copy> 
+                select DISTINCT cust_key,AFFINITY_CARD,PREDICTION(cnvg.churn_model USING *)  MY_PREDICTION,PREDICTION_PROBABILITY(cnvg.churn_model USING *)  as PROBABILITY
+            from dw_table
+            where AFFINITY_CARD=0
+            and PREDICTION(cnvg.churn_model USING *)=1
+            </copy>
+
+    Then click on Save Changes.
+![Select SQL](./images/save-changes.png)
+
+4. Once it is saved, we can click on **Run** again to visualize the changes.
+
+![Select SQL](./images/run-final.png)
+
+5. We can see the new table with the customers who are candidate to have an affinity card.
+
+![Select SQL](./images/final-report.PNG)
+
 ## Acknowledgements
-* **Author** - Priscila Iruela, Technology Product Strategy Director
-* **Contributors** - Victor Martin Alvarez, Technology Product Strategy Director
-* **Last Updated By/Date** - Priscila Iruela, September 2022
+* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Contributors** - Priscila Iruela, Technology Product Strategy Director
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

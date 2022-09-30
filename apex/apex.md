@@ -1,61 +1,119 @@
-# Oracle Database Service for Microsoft Azure Workshop
+# Create an insight application with APEX
 
-![Intro Oracle Database Service for Microsoft Azure](./images/odsa.png)
 
 ## Introduction
 
-The New Oracle Database Service for Microsoft Azure (ODSA) allows you to easily integrate Oracle Cloud Infrastructure's Database service into your Azure cloud environment. ODSA uses a service-based approach, and is an alternative to manually creating complex cross-cloud deployments for your application stacks.
+Oracle APEX is a low-code development platform that enables you to build scalable, secure enterprise apps, with world-class features, that can be deployed anywhere. Using APEX, developers can quickly develop and deploy compelling apps that solve real problems and provide immediate value. You won't need to be an expert in a vast array of technologies to deliver sophisticated solutions. Focus on solving the problem and let APEX take care of the rest.
 
-Oracle Database Service for Microsoft Azure is an Oracle-managed service for Azure customers to easily provision, access, and operate enterprise-grade Oracle Database services in Oracle Cloud Infrastructure (OCI) with a familiar Azure-like experience. Users can seamlessly build Azure applications with the high performance, high availability, and automated management of Oracle Database services, such as Autonomous Database, running on OCI.
+In this Lab we are going to use APEX to visualize the result from all the labs.
 
-The service establishes low-latency connectivity between Microsoft Azure and OCI, deploys Oracle Database on OCI, and provides metrics on Azure. Customers can combine the full Azure catalog of AI and application services with OCI’s most powerful database services. There are no charges for the interconnect ports or data ingress/egress over the interconnect. You will be billed normally for consumption of Oracle Database services like Autonomous Database.
+Estimated Lab Time: 15 minutes.
 
-- **Run your workloads where you choose**. Choose the best cloud provider for your applications and databases. Run mission-critical enterprise workloads across OCI and Microsoft Azure.
-
-- **Build with Oracle on Azure**. Build new applications by combining Azure services with the high performance, high availability, and automated management of Oracle Database services on OCI.
-
-- **Use fully managed Oracle databases**. Quickly and easily use Azure applications with highly available Oracle autonomous databases that provision, tune, secure, and scale.
-
-- **OCI-exclusive database capabilities**. Use Oracle's Autonomous Database, Exadata Database Service, and Base Database Service with Real Application Clusters and other exclusive OCI capabilities.
-
-This workshop has the following parts:
-
-- Introduction
-- Getting Started
-- Account Set Up
-- Oracle Autonomous Database Provisioning
-- Overview and Tags
-- Networking
-- Backups
-
-
-**Estimated Workshop Time: 60 minutes.**
-
-## Objectives
+### Objectives
 
 In this lab, you will:
 
-* Access to Microsoft Azure Portal
-* Sync the Microsoft Azure account with Oracle Cloud Infrastructure
-* Provision Oracle Autonomous Database
-* Learn Overview and Tags dashboard
-* Learn Networking dashboard
-* Learn Backups dashboard
-
-## Prerequisites
-
-* [An Oracle Free Tier](https://bit.ly/free-tier-1207), Always Free, Paid or LiveLabs Cloud Account - You can check Getting Started section for more information.
-* Microsoft Azure account
-
-Here is a video to help with the Oracle Trial Sign Up Process:
-[](youtube:4U-0SumNz6w)
-
-We are providing a basic reference to create a Microsoft Azure account. We are not pretending to be an Microsoft Azure experts or provide Azure best practices. We are using Azure account as user for the workshop purpose not experts level on the matter. If you need support on this process, contact your Microsft Azure support contact.
-
-Here you have a [Prerequisites document](https://objectstorage.eu-frankfurt-1.oraclecloud.com/p/Xs62xuw9UF7_P0By0FfkukpJhbDjzqC68huTdByF0KRPrsnzzLqFqP6H_YxDOJ1m/n/fruktknlrefu/b/workshop-odsa/o/Oracle%20Database%20Service%20for%20Microsoft%20Azure%20Workshop%20-%20Prerequisites.pdf) where you can find support to create the Oracle Cloud account and Microsoft Azure account.
+* Create an APEX application
+* Create simple charts 
+* Modify a chart
 
 
-*At this point, you are ready to start learning! Please proceed.*
+
+### Prerequisites
+
+This lab assumes you have done all the other labs.
+
+## Task 1: Create Workspace
+
+1. Let's create a new workspace in APEX before we create an application. In your Autonomous Database, go to **Tools** and then **Oracle APEX**.
+
+![Select SQL](./images/go-to-apex.png)
+
+2. We need to log in with the admin user. We just need to introduce the password. 
+
+    - **Password:** Password123##
+
+![Select SQL](./images/sign-admin.png)
+
+3. Click on **Create Workspace**
+
+![Select SQL](./images/create-workspace.png)
+
+4. Click on **Existing Schema**
+
+![Select SQL](./images/existing-schema.png)
+
+5. Define the user and worskpace. Then click on Create Workspace
+
+    - **Database User:** CNVG
+
+    - **Workspace Name:** CNVG
+
+    - **Workspace Username:** CNVG
+
+    - **Password:** Password123##
+
+![Select SQL](./images/define-workspace.png)
+
+6. Click over **CNVG** to go to the new workspace.
+
+![Select SQL](./images/new-workspace.png)
+
+7. Sign in with the CNVG user:
+
+    - **Workspace:** CNVG
+
+    - **Workspace Username:** CNVG
+
+    - **Password:** Password123##
+
+![Select SQL](./images/sign-cnvg.png)
+
+## Task 2: Create an application with charts
+
+1. Let's create our application. Go to **App Builder** and click on **Create**.
+
+![Select SQL](./images/create-app.png)
+
+2. Select **New Application** 
+
+![Select SQL](./images/new-app.png)
+
+3. Let's define the name for our application. Let's call it Data Insights
+
+![Select SQL](./images/data-insights.png)
+
+4. Let's add a page to our application. Click on **Add Page**
+
+![Select SQL](./images/add-page.png)
+
+5. Click on **Dashboard**
+
+![Select SQL](./images/add-dashboard.png)
+
+6. This dashboard will populate 4 charts. We just need to define what we want to plot. Let's define our first chart.
+
+![Select SQL](./images/chart1.png)
+
+![Select SQL](./images/goto2.png)
+
+7. Let's populate our second chart.
+
+![Select SQL](./images/chart2.png)
+
+![Select SQL](./images/goto3.png)
+
+8. Let's populate our third chart
+
+![Select SQL](./images/chart3.png)
+
+![Select SQL](./images/finish-page.png)
+
+9. Select check all and click on create app.
+
+![Select SQL](./images/terminate-app.png)
+
+## Task 3: Modify a chart
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

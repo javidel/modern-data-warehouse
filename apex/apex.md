@@ -113,7 +113,33 @@ This lab assumes you have done all the other labs.
 
 ![Select SQL](./images/terminate-app.png)
 
+10. Let's have first look into our application. Click on the **Run** button.
+
+![Select SQL](./images/run-app.png)
+
+11. Log in with the CNVG user. Then click on Sign in
+
+    - **Username:** CNVG
+
+    - **Password:** Password123##
+
+![Select SQL](./images/log-cnvg.png)
+
+12. Click on Dashboard
+
+![Select SQL](./images/select-dashboard.png)
+
+13. We can see our insight application with the reports.
+
+![Select SQL](./images/first-report.PNG)
+
+As you can see, we haven't defined the fourth chart. Let's modify that chart in the next task.
+
 ## Task 3: Modify a chart
+
+1. Let's modify the last chart. We need to go back to the Application Builder tab, and click on the dashboard page.
+
+![Select SQL](./images/dashboard-page.png)
 
 ## Acknowledgements
 * **Author** - Priscila Iruela, Technology Product Strategy Director

@@ -109,7 +109,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 7. You should see no error when loading
 
-    ![data loaded](./images/data-loaded.PNG)
+    ![data loaded](./images/data-loaded.png)
 
 ## Task 3: Try to do data tampering
 

@@ -87,7 +87,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 9. Once it is finish, we can see which are the columns or features that have bigger impact in our model. We can see that emotion is very important.
 
-  ![Create Warehouse](./images/importance.PNG)
+  ![Create Warehouse](./images/importance.png)
 
 ## Task 3: Store and Query the model inside the Autonomous Database
 
@@ -119,7 +119,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
         </copy>
 
-  ![Create Warehouse](./images/query-model.PNG)
+  ![Create Warehouse](./images/query-model.png)
 
 ## Acknowledgements
 * **Author** - Javier de la Torre, Principal Data Mangagement Specialist

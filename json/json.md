@@ -7,7 +7,7 @@ Autonomous Database supports JSON data natively in the database. You can use NoS
 
 In this Lab you are going to learn how to upload JSON data and how to run some queries over them.
 
-Estimated Lab Time: 15 minutes.
+Estimated Lab Time: 30 minutes.
 
 ### Objectives
 
@@ -25,9 +25,14 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Upload JSON tweets into Object Storage
 
-1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/JSON_Full_tweets.json "download")
+1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/JSON_Full_tweets.json "download"). We recommend you to call the file **JSON\_Full\_tweets.json**.
+    
+    - **File name:** JSON\_Full\_tweets.json
+        ```
+        <copy>JSON_Full_tweets.json</copy>
+        ```
 
-2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket.
+2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket. Access to **Storage** from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
 
     ![Go to Buckets](./images/create-bucket.png)
 
@@ -36,6 +41,11 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
     ![Create Bucket](./images/create-bucket2.png)
 
 4. Set the name for the bucket. We are going to call it **json_data**. Then click the **create** button.
+
+    - **Bucket name:** json_data
+        ```
+        <copy>json_data</copy>
+        ```
 
     ![Define Bucket](./images/create-bucket3.png)
 
@@ -47,90 +57,105 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Select Bucket](./images/select-upload.png)
 
-7. Select the JSON file we just downloaded and then click on **upload**
+7. Select the JSON file we just downloaded, **JSON\_Full\_tweets.json**, and then click on **upload**.
 
     ![Select Bucket](./images/upload-json.png)
 
-8. We should see the JSON file there.
+8. We should see the JSON file there on the Objects part of this bucket.
 
-    ![Select Bucket](./images/file-uploaded.PNG)
+    ![Select Bucket](./images/file-uploaded.png)
     
-
 
 ## Task 2: Create credential for Autonomous Database
 
-1. Now we have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your profile icon and then on your email name. **Store** your user as you will need it for later.
+1. Now we have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your **profile icon** and then on **My profile**. **Take a note** of your user as you will need it for later.
 
-    ![Find credentials](./images/go-to-credential.png)
+    ![Find credentials](./images/go-to-credential2.png)
 
-2. Let's create a new token for the Autonomous Database. Click on **Auth Token**.
+2. Let's create a new token for the Autonomous Database. Click on **Auth Tokens** under the **Resources** section on the left size of the screen.
 
     ![Open credentials](./images/go-to-token.png)
 
-3. Click on **Generate Token**
+3. Click on **Generate Token**.
 
     ![Create credentials](./images/generate-token.png)
 
-4. It will show a popup like this. This token will be shown only once. Click **Show** to show the token. **Save it** in a notepad or a secure place for later. It will never be shown again.
+4. Provide a **token name**, for instance, **token\_modern\_data\_warehouse**, and click **Generate token**.
+
+    - **Description:** token\_modern\_data\_warehouse
+        ```
+        <copy>token_modern_data_warehouse</copy>
+        ```
+    
+    ![Show token name](./images/show-token-name.png)
+
+5. It will show a popup like this. **This token will be shown only once**. Click **Show** to show the token.
 
     ![Show token](./images/show-token.png)
 
-5. Click **copy** and store it in a secure place. Then you can click **close**.
+6. Click **Copy** and store it in a secure place. **Save it** in a notepad or a secure place for later. **It will never be shown again**. Then you can click **Close**.
 
     ![Copy token](./images/save-token.png)
 
-6. We have stored the credential, now we need to find and store the location of where the data is stored. We will share this info with the Autonomous Database so it can load it. Let's go back to the Object Storage.
+7. We have stored the credential, now we need to find and store the location of where the data is stored. We will share this info with the Autonomous Database so it can load it. Let's go back to the **Object Storage**. Go from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
 
     ![Go to Object](./images/go-to-object.png)
 
-7. Select the JSON bucket we already created.
+8. Select the JSON bucket we already created.
 
     ![Select JSON](./images/select-json-bucket.png)
 
-8. Let's find the information from the tweets. From the menu of the file, select **View Object Details**
+9. Let's find the information from the tweets. From the menu of the file, select **View Object Details**
 
     ![View Details](./images/get-json-details.png)
 
-9. You will find the url with the JSON file location. **Save this url** as we are going to need it for loading it. Then click **cancel** to exit.
-
+10. You will find the url with the JSON file location. **Save this url** as we are going to need it for loading it later on. Then click **Cancel** to exit.
+ 
     ![Save URL](./images/get-url-json.png)
 
-
-
-10. As we have the credential created and we know the url where we store our JSON data, now we can proceed to authorize Autonomous with this credential. Let's go to our Autonomous Data Warehouse
+11. As we have the credential created and we know the url where we store our JSON data, now we can proceed to authorize Autonomous with this credential. Let's go to our Autonomous Data Warehouse.
 
     ![Go to ADW](./images/go-to-adb.png)
 
-11. Select our MODERNDW database
+12. Select our **MODERNDW** database.
 
     ![Choose ADW](./images/choose-adw.png)
 
-12. Go to **Database Actions**
+13. Go to **Database Actions**.
 
-    ![Choose DB ACtions](./images/go-to-actions.png)
+    ![Choose DB Actions](./images/go-to-actions.png)
 
-13. We need to connect with the **CNVG** and not with the ADMIN user. Let's log out first
+14. We need to connect with the **CNVG** and not with the **ADMIN** user. Let's log out first.
 
-    ![log out](./images/sign-out.png)
+    ![Log out](./images/sign-out.png)
 
-14. Click on **Sign in**.
+15. Click on **Sign in**.
 
-    ![log ing](./images/sign-in.png)
+    ![Log ing](./images/sign-in.png)
 
-15. Connect with the CNVG user we created before
+16. Connect with the **CNVG** user we created before.
+
     - **User Name:** CNVG
-    
+        ```
+        <copy>CNVG</copy>
+        ```
+
     - **Password:** Password123##
+        ```
+        <copy>Password123##</copy>
+        ```
 
-    ![use cnvg](./images/actions-cnvg.png)
+    ![Use cnvg](./images/actions-cnvg.png)
 
-16. Select the SQL Web 
+17. Select the **SQL** to access to the **SQL Web** from the **Development** section. 
 
-    ![select sql](./images/select-sql.png)
+    ![Select sql](./images/select-sql.png)
 
-17. Run the following SQL for creating the credential:
+18. Run the following **SQL** for creating the credential, replacing useername and password for the information that we already copied before.
+    - **username**, it is your **Oracle Cloud user name** that we copied on step number 1 of this task. It should be your your email addrees.
+    - **password**, it is the **Auth token** that we copied on step number 6 of this task.
 
-    
+    ```
         <copy> begin
             dbms_cloud.create_credential (
             credential_name => 'json_cred',
@@ -140,30 +165,38 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             end;
             /
         </copy>
-        
+    ```
 
-    ![create credential](./images/create-credential.png)
+    Check that the **PL/SQL procedure has being suceesfully completed**.
+
+    ![Create credential](./images/create-credential.png)
 
 ## Task 3: Load JSON into Autonomous Database
 
-1. In this task we are going to learn how to upload single document and how to load bulk JSONs. First let's learn how to do load a simple document. Go to the menu and select JSON.
+1. In this task we are going to learn how to upload single document and how to load bulk JSONs. First let's learn how to do load a simple document. Go to the menu and select **JSON**.
 
     ![Go to JSON](./images/go-to-json.png)
 
-2. Let's create a new collection to store our JSON data. Click on create collection.
+2. Let's create a **new collection** to store our JSON data. Click on **Create Collection**.
 
     ![Go to collection](./images/create-collection.png)
 
 3. Name our new collection as **sample_tweets** and click **create**.
 
+    - **Collection Name:** sample_tweets
+        ```
+        <copy>sample_tweets</copy>
+        ```
+
     ![Go to collection2](./images/create-collection2.png)
 
-4. Let's upload a new JSON document. Click on the icon for creating a new one.
+4. Let's upload a new JSON document. Click on the icon for creating a **New JSON Document**.
 
     ![Create Document](./images/create-document.png)
 
 5. Copy and paste the following tweet. Then click on the **Create** button.
-
+    
+    ```
         <copy>{
                 "id": 500,
                 "text": "Don't buy! the company took my money and sent me an email telling me the product was shipped.Still waiting after a month. Very dissapointed!",
@@ -194,15 +227,17 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
                 }
                 }
         </copy>
+    ```
 
     ![Create Document](./images/single-json.png)
 
-6. Now let's proceed for the bulk load. Let's load the JSON file stored in the object storage. Let's go back to SQL.
+6. Now let's proceed for the bulk load. Let's load the JSON file stored in the object storage. Let's go back to **SQL**.
 
     ![Back to SQL](./images/back-to-sql.png)
 
-7. Execute the COPY_COLLECTION utility for loading the JSON file into the collection. We need to provide the credential created, the collection name and the URL where the JSON is located. You should have all this information from steps before. Run the following code and execute it.
+7. Execute the **COPY_COLLECTION** utility for loading the JSON file into the collection. We need to provide the **credential name** created on previous task, **json\_cred**, the **collection name**, **sample\_tweets** and the **URL** where the JSON is located, that is the URL that we copied on the step number 10 from the previous lab. You should have all this information from steps before. **Change** the information and **Execute** it.
 
+    ```
         <copy> BEGIN 
             DBMS_CLOUD.COPY_COLLECTION(    
                 collection_name => 'sample_tweets', 
@@ -213,68 +248,82 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             END;
             /
         </copy>
+    ```
+
+    Check that the PL/SQL procedure has being suceesfully completed.
 
     ![Copy Collection](./images/copy-collection.png)
+
 
 ## Task 4: Run queries over JSON
 
 1. With all the tweets loaded, let's run some SQL queries over our JSON. In our first query, let's see how many tweets do we have. We must see 20 rows.
-
+    
+    ```
         <copy> 
             select count(*) from sample_tweets;
         </copy>
+    ```
 
     ![Select count](./images/select-count.png)
 
-2. Now let's visualize the conent of the JSON tweets. For that we are going to use the json_serialize.
+2. Now let's visualize the conent of the JSON tweets. For that we are going to use the **json\_serialize**.
 
+    ```    
         <copy> 
             select json_serialize(json_document) from sample_tweets;
         </copy>
+    ```
 
-    ![Select serialize](./images/json-serialize.PNG)
+    ![Select serialize](./images/json-serialize.png)
 
-3. Oracle provides the capability for showing the JSON like a table, we can run a simple query using the dot notation. Let's query some fields.
+3. Oracle provides the capability for showing the JSON like a table, we can run a simple query using the **dot notation**. Let's query some fields.
 
-
+    ```
         <copy> 
             select s.json_document.id , s.json_document.text , s.json_document.retweeted,s.json_document.reply_count
         from sample_tweets s
 
         </copy>
+    ```
 
-    ![Select fields](./images/query-fields.PNG)
+    ![Select fields](./images/query-fields.png)
 
-4. Also we can use the where condition over JSON. Let's run a query filtering by tweets located in Paris.
+4. Also we can use the **where condition over JSON**. Let's run a query filtering by tweets located in Paris.
 
+    ```
         <copy> 
             select s.json_document.id , s.json_document.text , s.json_document.retweeted,s.json_document.reply_count,s.json_document.location
         from sample_tweets s
         where s.json_document.location='Paris'
         </copy>
+    ```
 
-    ![Select count](./images/query-paris.PNG)
+    ![Select count](./images/query-paris.png)
 
-5. If you feel more confortable with JSON, we can use the Query by Example directy on JSON. Let's run a simple query. Let's go to the JSON utility.
+5. If you feel more confortable with JSON, we can use the **Query by Example** directy on JSON. Let's run a simple query. Let's go to the JSON utility.
 
     ![Back to JSON](./images/back-to-json.png)
 
-6. Let's run a simple query, to filter by specific id:
+6. Let's run a simple query, **to filter by specific id**, in this case **510**:
 
+    ```
         <copy> 
             {"id":510}
         </copy>
+    ```
 
-    ![Select id](./images/query-id.PNG)
+    ![Select id](./images/query-id.png)
 
-7. Let's query for all the tweets not located in Paris.
+7. Let's query for all the tweets **not located in Paris**.
 
+    ```
         <copy> 
             {"location" : {"$not" : {"$eq" : "Paris"}}}
         </copy>
+    ```
 
-    ![Select id](./images/query-not-paris.PNG)
-
+    ![Select id](./images/query-not-paris.png)
 
 You can proceed to the next lab.
 

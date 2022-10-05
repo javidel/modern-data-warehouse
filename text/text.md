@@ -1,7 +1,5 @@
 # Sentiment Analysis with Oracle Text
 
-
-
 ## Introduction
 
 Oracle Text provides the capability of searching text using specific indices. Using this indices, we can run sentiment analysis over our tweets.
@@ -23,79 +21,95 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 1: Create materialized view over JSON data
 
-1. Before we create the Oracle Text index, we are goint to create a materialized view. We are going to take advantage of the JSON utilities. Click on **New Collection View**.
+1. Before we create the Oracle Text index, we are goint to create a **materialized view**. We are going to take advantage of the JSON utilities. Click on **New Collection View**.
 
-    ![get view](./images/get-view.png)
+    ![Get view](./images/get-view.png)
 
-2. Add all the columns to the view.
+2. **Add All** the columns to the view.
 
-    ![add all columns](./images/add-all.png)
+    ![Add all columns](./images/add-all.png)
 
 3.  Click on **Test Query**.
 
     ![Test Query](./images/test-query.png)
 
-4. Copy the view definition.
+4. **Copy** the view definition.
 
     ![Copy Query](./images/copy-query.png)
 
-5. Click Close
+5. Click **Close**.
 
     ![Click Close](./images/click-close.png)
 
-6. Go back to SQL.
+6. Go back to **SQL**.
 
     ![Click Close](./images/back-to-sql.png)
 
-7. Paste the SQL we got from JSON
+7. **Paste** the SQL we got from JSON.
 
     ![Click Close](./images/paste-sql.PNG)
 
-8. At the beginning of the query, add the create materialized view statement.
+8. **Add the create materialized view statement** at the beginning of the query, like in the screenshoot:
 
+    ```
         <copy> 
             create materialized view mv_tweets as 
         </copy>
+    ```
 
     ![Select count](./images/create-view.png)
 
-9. Click on the run button to create the materialized view.
+9. Click on the **Run** button to create the materialized view.
+
+    Check that the MV_TWEETS Materialied view has being created.
 
     ![Select count](./images/run-view.png)
 
-10. Let's create a primary key over our materialized view. We will need it for our Oracle Text index.
+10. Let's create a **primary key over our materialized view**. We will need it for our Oracle Text index. Click on the **Run** button to alter the table.
 
+    ```
         <copy> 
             ALTER TABLE mv_tweets ADD CONSTRAINT mv_tweets_pk PRIMARY KEY (id);
         </copy>
+    ```
+    
+    Check that command has being completed succesfull.
 
     ![Select count](./images/create-pk.png)
 
 ## Task 2: Create Oracle Text Index
 
-1. Let's create the lexer
+1. Let's create the **lexer**. Click on the **Run** button to execute the command.
 
+    ```
         <copy> 
             exec ctx_ddl.create_preference('review_lexer', 'AUTO_LEXER')
         </copy>
+    ```
+
+    Check that command has being completed succesfull.
 
     ![Create Lexer](./images/create-lexer.png)
 
-2. Let's create the Oracle Text index
+2. Let's create the **Oracle Text index**. Click on the **Run** button to execute the command.
 
+    ```
         <copy> 
             create index sentiment_index on mv_tweets(text)
         indextype is ctxsys.context 
         parameters ('lexer review_lexer');
-
         </copy>
+    ```
+    
+    Check that command has being completed succesfull.
 
     ![Create Lexer](./images/create-index.png)
 
 ## Task 3: Get Sentiment Analysis
 
-1. As we have our index created, let's have a look to the sentiment.
+1. As we have our index created, let's have a look to the **sentiment**. Click on the **Run** button to execute the command.
 
+    ``` 
         <copy> 
             select ctx_doc.sentiment_aggregate(
         index_name => 'sentiment_index',
@@ -103,24 +117,29 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         ) sentiment,id, text
         from mv_tweets;
         </copy>
-
+    ```
+    
     ![Create Lexer](./images/first-sentiment.png)
 
-2. Let's store the result into a table.
+2. Let's **store the result into a table**. Click on the **Run** button to execute the command.
 
+    ```
         <copy> 
             create table sentiment_results as select ctx_doc.sentiment_aggregate(
         index_name => 'sentiment_index',
         textkey    => id 
         ) sentiment,id, text,name
         from mv_tweets;
-
         </copy>
+    ```
+    
+    Check that command has being completed succesfull.
 
     ![Create Lexer](./images/create-table.png)
 
-3. Let's add some metadata, to identify easier which comment is negative, neutral or positive.
+3. Let's **add some metadata**, to identify easier which comment is negative, neutral or positive. Click on the **Run** button to execute the command.
 
+    ```
         <copy> 
                 alter table sentiment_results add emotion varchar2(50);
             update sentiment_results
@@ -130,19 +149,21 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             when sentiment > 0 then 'Positive'
             end);
             commit;
-
         </copy>
+    ```
+
+    Check that command has being completed succesfull.
 
     ![Create Lexer](./images/alter-table.png)
 
-4. Finally, let's look for tweets that contain the word ship. We will look for all the tweets related to the shipping.
+4. Finally, let's look for tweets that contain the word **ship**. We will look for all the tweets related to the shipping. Click on the **Run** button to execute the command.
 
+    ```
         <copy> 
             select * from mv_tweets
         where contains ( text, 'shipp%' ) >0
-
-
         </copy>
+    ```
 
     ![Create Lexer](./images/text-search.png)
 

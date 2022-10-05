@@ -131,7 +131,7 @@ This lab assumes you have done all the other labs.
 
 13. We can see our insight application with the reports.
 
-![Select SQL](./images/first-report.PNG)
+![Select SQL](./images/first-report.png)
 
 As you can see, we haven't defined the fourth chart. Let's modify that chart in the next task.
 
@@ -147,7 +147,7 @@ As you can see, we haven't defined the fourth chart. Let's modify that chart in 
 
 You will see the default configuration for the chart at the right part of the window. 
 
-![Select SQL](./images/default-config.PNG)
+![Select SQL](./images/default-config.png)
 
 3. We need to set the new parameters. We are going to use the Machine Learning algorithm we got from the AutoML lab. You need to modify the following:
 
@@ -177,7 +177,7 @@ You will see the default configuration for the chart at the right part of the wi
 
 5. We can see the new table with the customers who are candidate to have an affinity card.
 
-![Select SQL](./images/final-report.PNG)
+![Select SQL](./images/final-report.png)
 
 ## Acknowledgements
 * **Author** - Javier de la Torre, Principal Data Mangagement Specialist

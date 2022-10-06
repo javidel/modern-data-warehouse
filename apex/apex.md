@@ -18,140 +18,209 @@ In this lab, you will:
 * Modify a chart
 
 
-
 ### Prerequisites
 
 This lab assumes you have done all the other labs.
 
 ## Task 1: Create Workspace
 
-1. Let's create a new workspace in APEX before we create an application. In your Autonomous Database, go to **Tools** and then **Oracle APEX**.
+1. Let's create a new workspace in **APEX** before we create an application. In your **Autonomous Database**, go to **Tools** and then **Oracle APEX**. Finally click on **Open APEX** button.
 
-![Select SQL](./images/go-to-apex.png)
+    ![Select SQL](./images/go-to-apex.png)
 
 2. We need to log in with the admin user. We just need to introduce the password. 
 
     - **Password:** Password123##
+        ```
+            <copy>Password123##</copy>
+        ```
 
-![Select SQL](./images/sign-admin.png)
+    ![Select SQL](./images/sign-admin.png)
 
-3. Click on **Create Workspace**
+3. Click on **Create Workspace**.
 
-![Select SQL](./images/create-workspace.png)
+    ![Select SQL](./images/create-workspace.png)
 
-4. Click on **Existing Schema**
+4. Click on **Existing Schema**.
 
-![Select SQL](./images/existing-schema.png)
+    ![Select SQL](./images/existing-schema.png)
 
-5. Define the user and worskpace. Then click on Create Workspace
+5. Define the **user**, **worskpace** and password. Then click on **Create Workspace**.
 
-    - **Database User:** CNVG
+    - **Database User:** CNVG. You have to search the database user as you have selected existing schema option previously.
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Workspace Name:** CNVG
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Workspace Username:** CNVG
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Password:** Password123##
+        ```
+            <copy>Password123##</copy>
+        ```
 
-![Select SQL](./images/define-workspace.png)
+    ![Select SQL](./images/define-workspace.png)
 
-6. Click over **CNVG** to go to the new workspace.
+6. Click over **CNVG** to go to the new **workspace**.
 
-![Select SQL](./images/new-workspace.png)
+    ![Select SQL](./images/new-workspace.png)
 
-7. Sign in with the CNVG user:
+7. **Sign in** with the **CNVG** user:
 
     - **Workspace:** CNVG
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Workspace Username:** CNVG
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Password:** Password123##
+        ```
+            <copy>Password123##</copy>
+        ```
 
-![Select SQL](./images/sign-cnvg.png)
+    ![Select SQL](./images/sign-cnvg.png)
 
 ## Task 2: Create an application with charts
 
-1. Let's create our application. Go to **App Builder** and click on **Create**.
+1. Let's **create our application**. Go to **App Builder** and click on **Create**.
 
-![Select SQL](./images/create-app.png)
+    ![Select SQL](./images/create-app.png)
 
-2. Select **New Application** 
+2. Select **New Application**.
 
-![Select SQL](./images/new-app.png)
+    ![Select SQL](./images/new-app.png)
 
-3. Let's define the name for our application. Let's call it Data Insights
+3. Let's define the **name** for our application. Let's call it **Data Insights**.
+    
+    - **Name:** Data Insights
+        ```
+            <copy>Data Insights</copy>
+        ```
 
-![Select SQL](./images/data-insights.png)
+    ![Select SQL](./images/data-insights.png)
 
-4. Let's add a page to our application. Click on **Add Page**
+4. Let's add a page to our application. Click on **Add Page**.
 
-![Select SQL](./images/add-page.png)
+    ![Select SQL](./images/add-page.png)
 
-5. Click on **Dashboard**
+5. Click on **Dashboard**.
 
-![Select SQL](./images/add-dashboard.png)
+    ![Select SQL](./images/add-dashboard.png)
 
-6. This dashboard will populate 4 charts. We just need to define what we want to plot. Let's define our first chart.
+6. This dashboard will **populate 4 charts**. We just need to define what we want to plot. Let's define our **first chart**.
 
-![Select SQL](./images/chart1.png)
+    - **Type:** Pie Chart
+    - **Chart Name:** Sentiment Results
+        ```
+            <copy>Sentiment Results</copy>
+        ```
+    - **Table or View:** SENTIMENT_RESULTS
+    - **Label Column:** EMOTION
+    - **Value:** Count
+    - **Value Column:** EMOTION
 
-![Select SQL](./images/goto2.png)
+    ![Select SQL](./images/chart1.png)
 
-7. Let's populate our second chart.
+7. Let's populate our **second chart**.
 
-![Select SQL](./images/chart2.png)
+    ![Select SQL](./images/goto2.png)
 
-![Select SQL](./images/goto3.png)
+    - **Type:** Bar Chart
+    - **Chart Name:** Top Followers
+        ```
+            <copy>Top Followers</copy>
+        ```
+    - **Table or View:** MV_TWEETS
+    - **Label Column:** NAME
+    - **Value:** Column Value
+    - **Value Column:** FOLLOWERS_COUNT
 
-8. Let's populate our third chart
+    ![Select SQL](./images/chart2.png)
 
-![Select SQL](./images/chart3.png)
+8. Let's populate our **third chart**.
 
-![Select SQL](./images/finish-page.png)
+    ![Select SQL](./images/goto3.png)
 
-9. Select check all and click on create app.
+    - **Type:** Bar Chart
+    - **Chart Name:** Top Influencers
+        ```
+            <copy>Top Influencers</copy>
+        ```
+    - **Table or View:** INFLUENCERS
+    - **Label Column:** NAME
+    - **Value:** Column Value
+    - **Value Column:** PAGERANK
 
-![Select SQL](./images/terminate-app.png)
+    ![Select SQL](./images/chart3.png)
+
+9. Click on **Add Page**.
+
+    ![Select SQL](./images/finish-page.png)
+
+9. Select **Check All** and click on **Create Application**.
+
+    ![Select SQL](./images/terminate-app.png)
 
 10. Let's have first look into our application. Click on the **Run** button.
 
-![Select SQL](./images/run-app.png)
+    ![Select SQL](./images/run-app.png)
 
-11. Log in with the CNVG user. Then click on Sign in
+11. Log in with the **CNVG** user. Then click on **Sign in**.
 
     - **Username:** CNVG
+        ```
+            <copy>CNVG</copy>
+        ```
 
     - **Password:** Password123##
+        ```
+            <copy>Password123##</copy>
+        ```
 
-![Select SQL](./images/log-cnvg.png)
+    ![Select SQL](./images/log-cnvg.png)
 
-12. Click on Dashboard
+12. Click on **Dashboard**.
 
-![Select SQL](./images/select-dashboard.png)
+    ![Select SQL](./images/select-dashboard.png)
 
-13. We can see our insight application with the reports.
+13. We can see our insight application with the **reports**.
 
-![Select SQL](./images/first-report.png)
+    ![Select SQL](./images/first-report.png)
 
-As you can see, we haven't defined the fourth chart. Let's modify that chart in the next task.
+    As you can see, we haven't defined the **fourth chart**. Let's modify that chart in the next task.
 
 ## Task 3: Modify a chart
 
-1. Let's modify the last chart. We need to go back to the Application Builder tab, and click on the dashboard page.
+1. Let's **modify the last chart**. We need to go back to the **Application Builder** tab, and click on the **Dashboard** page.
 
-![Select SQL](./images/dashboard-page.png)
+    ![Select SQL](./images/dashboard-page.png)
 
-2. Look for the component Chart 4 that we didn't configure before and select it.
+2. Look for the component **Chart 4** that we didn't configure before,  and **Select** it.
 
-![Select SQL](./images/select-chart4.png)
+    ![Select SQL](./images/select-chart4.png)
 
-You will see the default configuration for the chart at the right part of the window. 
+3. You will see the **default configuration** for the chart at the right part of the window. 
 
-![Select SQL](./images/default-config.png)
+    ![Select SQL](./images/default-config.png)
 
-3. We need to set the new parameters. We are going to use the Machine Learning algorithm we got from the AutoML lab. You need to modify the following:
+4. We need to set the **new parameters**. We are going to use the **Machine Learning algorithm** we got from the AutoML lab. You need to modify the following:
 
     - **Title:** Possible new customers
+        ```
+            <copy>Possible new customers</copy>
+        ```
 
     - **Type:** Classic Report
 
@@ -161,23 +230,28 @@ You will see the default configuration for the chart at the right part of the wi
 
     - **Query:** 
 
+        ```
             <copy> 
-                select DISTINCT cust_key,AFFINITY_CARD,PREDICTION(cnvg.churn_model USING *)  MY_PREDICTION,PREDICTION_PROBABILITY(cnvg.churn_model USING *)  as PROBABILITY
-            from dw_table
-            where AFFINITY_CARD=0
-            and PREDICTION(cnvg.churn_model USING *)=1
+                select DISTINCT cust_key,AFFINITY_CARD,PREDICTION(cnvg.churn_model USING *) MY_PREDICTION,PREDICTION_PROBABILITY(cnvg.churn_model USING *) as PROBABILITY
+                from dw_table
+                where AFFINITY_CARD=0
+                and PREDICTION(cnvg.churn_model USING *)=1
             </copy>
+        ```
 
-    Then click on Save Changes.
-![Select SQL](./images/save-changes.png)
+5. Then click on **Save** Changes.
+    
+    ![Select SQL](./images/save-changes.png)
 
-4. Once it is saved, we can click on **Run** again to visualize the changes.
+6. Once it is saved, we can click on **Run** again to visualize the changes.
 
-![Select SQL](./images/run-final.png)
+    ![Select SQL](./images/run-final.png)
 
-5. We can see the new table with the customers who are candidate to have an affinity card.
+7. We can see the **new table with the customers who are candidate to have an affinity card.**
 
-![Select SQL](./images/final-report.png)
+    ![Select SQL](./images/final-report.png)
+
+_Congratulations! Well done!_
 
 ## Acknowledgements
 * **Author** - Javier de la Torre, Principal Data Mangagement Specialist

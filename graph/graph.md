@@ -4,7 +4,7 @@
 
 Oracle Graph allows to discover patterns in the data. We will use the tweets to see how the users talk with each other in order to get more information.
 
-Estimated Lab Time: 30 minutes.
+Estimated Lab Time: 40 minutes.
 
 ### Objectives
 
@@ -129,7 +129,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that the PL/SQL procedure has being suceesfully completed.
+    Check that the **PL/SQL procedure has being sucesfully completed**.
 
     ![Select upload](./images/load-json.png)
 
@@ -420,7 +420,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/back-to-sql2.png)
 
-13. We need a p**rimary key** for our view. Also we are going to create a **simplified table** for our twitter users. **Run** the folloing commands.
+13. We need a p**rimary key** for our view. Also we are going to create a **simplified table** for our twitter users. **Run** the following statements.
 
     ```
         <copy> 
@@ -430,7 +430,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that commands has being completed succesfull.
+    Check that **statements have being completed successfully**.
 
     ![Shell](./images/prepare-data.png)
 
@@ -509,7 +509,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 5: Find influencers
 
-1. As we have the **Graph loaded**, let's use the **Page Rank Algorithm** to determine influencers in our community. **Run** the following command:
+1. As we have the **Graph loaded**, let's use the **Page Rank Algorithm** to determine influencers in our community. **Run** the following statement:
 
     ```
         <copy> 
@@ -533,7 +533,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![List Influencers](./images/query-influencers.png)
 
-3. Now let's **store the result in a variable**. We will use this variable to **store the result back into the Oracle Database**. **Run** the following command:
+3. Now let's **store the result in a variable**. We will use this variable to **store the result back into the Oracle Database**. **Run** the following statement:
 
     ```
         <copy> 
@@ -547,7 +547,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Store result](./images/result.png)
 
-4. Let's **store the result in our Autonomous Database**. We are going to store it in a new table called **Influencers**. For that, **run** the following command:
+4. Let's **store the result in our Autonomous Database**. We are going to store it in a new table called **Influencers**. For that, **run** the following statement:
 
     ```
         <copy> 

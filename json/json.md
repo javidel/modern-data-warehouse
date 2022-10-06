@@ -167,7 +167,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         </copy>
     ```
 
-    Check that the **PL/SQL procedure has being suceesfully completed**.
+    Check that the **PL/SQL procedure has being sucesfully completed**.
 
     ![Create credential](./images/create-credential.png)
 
@@ -250,7 +250,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         </copy>
     ```
 
-    Check that the PL/SQL procedure has being suceesfully completed.
+    Check that the **PL/SQL procedure has being sucesfully completed**.
 
     ![Copy Collection](./images/copy-collection.png)
 

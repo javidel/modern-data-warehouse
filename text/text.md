@@ -61,7 +61,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 9. Click on the **Run** button to create the materialized view.
 
-    Check that the MV_TWEETS Materialied view has being created.
+    Check that the **MV_TWEETS Materialied view has being created**.
 
     ![Select count](./images/run-view.png)
 
@@ -73,13 +73,13 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
     
-    Check that command has being completed succesfull.
+    Check that **statement has being completed successfully**.
 
     ![Select count](./images/create-pk.png)
 
 ## Task 2: Create Oracle Text Index
 
-1. Let's create the **lexer**. Click on the **Run** button to execute the command.
+1. Let's create the **lexer**. Click on the **Run** button to execute the statement.
 
     ```
         <copy> 
@@ -87,61 +87,61 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that command has being completed succesfull.
+    Check that the **statement has being completed successfully**.
 
     ![Create Lexer](./images/create-lexer.png)
 
-2. Let's create the **Oracle Text index**. Click on the **Run** button to execute the command.
+2. Let's create the **Oracle Text index**. Click on the **Run** button to execute the statement.
 
     ```
         <copy> 
             create index sentiment_index on mv_tweets(text)
-        indextype is ctxsys.context 
-        parameters ('lexer review_lexer');
+            indextype is ctxsys.context 
+            parameters ('lexer review_lexer');
         </copy>
     ```
     
-    Check that command has being completed succesfull.
+    Check that the **statement has being completed successfully**.
 
     ![Create Lexer](./images/create-index.png)
 
 ## Task 3: Get Sentiment Analysis
 
-1. As we have our index created, let's have a look to the **sentiment**. Click on the **Run** button to execute the command.
+1. As we have our index created, let's have a look to the **sentiment**. Click on the **Run** button to execute the statement.
 
     ``` 
         <copy> 
             select ctx_doc.sentiment_aggregate(
-        index_name => 'sentiment_index',
-        textkey    => id 
-        ) sentiment,id, text
-        from mv_tweets;
+            index_name => 'sentiment_index',
+            textkey    => id 
+            ) sentiment,id, text
+            from mv_tweets;
         </copy>
     ```
     
     ![Create Lexer](./images/first-sentiment.png)
 
-2. Let's **store the result into a table**. Click on the **Run** button to execute the command.
+2. Let's **store the result into a table**. Click on the **Run** button to execute the statement.
 
     ```
         <copy> 
             create table sentiment_results as select ctx_doc.sentiment_aggregate(
-        index_name => 'sentiment_index',
-        textkey    => id 
-        ) sentiment,id, text,name
-        from mv_tweets;
+            index_name => 'sentiment_index',
+            textkey    => id 
+            ) sentiment,id, text,name
+            from mv_tweets;
         </copy>
     ```
     
-    Check that command has being completed succesfull.
+    Check that the **statement has being completed successfully**.
 
     ![Create Lexer](./images/create-table.png)
 
-3. Let's **add some metadata**, to identify easier which comment is negative, neutral or positive. Click on the **Run** button to execute the command.
+3. Let's **add some metadata**, to identify easier which comment is negative, neutral or positive. Click on the **Run** button to execute the statements.
 
     ```
         <copy> 
-                alter table sentiment_results add emotion varchar2(50);
+            alter table sentiment_results add emotion varchar2(50);
             update sentiment_results
             set emotion = (case
             when sentiment < 0 then 'Negative'
@@ -152,16 +152,16 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that command has being completed succesfull.
+    Check that the **statements has being completed successfully**.
 
     ![Create Lexer](./images/alter-table.png)
 
-4. Finally, let's look for tweets that contain the word **ship**. We will look for all the tweets related to the shipping. Click on the **Run** button to execute the command.
+4. Finally, let's look for tweets that contain the word **ship**. We will look for all the tweets related to the shipping. Click on the **Run** button to execute the statement.
 
     ```
         <copy> 
             select * from mv_tweets
-        where contains ( text, 'shipp%' ) >0
+            where contains ( text, 'shipp%' ) >0
         </copy>
     ```
 

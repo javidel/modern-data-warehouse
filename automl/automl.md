@@ -23,7 +23,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Prepare the data
 
-1. **Oracle AutoML requires an unique table to understand how the data is related and to define the column to predict**. For that we are going to create an unique table called **dw\_table**. Go to **SQL** and **Run** the following statements. Remember, you need to be the **CNVG** user and not the admin user.
+1. **Oracle AutoML requires an unique table to understand how the data is related and to define the column to predict**. For that we are going to create an unique table called **dw\_table**. Go to **SQL** and **Run** the following statement. Remember, you need to be the **CNVG** user and not the admin user.
 
     ```
         <copy> 
@@ -34,7 +34,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         </copy>
     ```
     
-    Check that the **statements has being completed successfully**.
+    Check that the **statement has being completed successfully**.
 
     ![Create Warehouse](./images/create-dw-table.png)
 
@@ -62,7 +62,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/go-home.png)
 
-4. Now we can sign in with the **CNVG** user.
+4. Now we can **Sign In** with the **CNVG** user.
 
     - **Username:** CNVG
         ```
@@ -91,7 +91,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
             <copy>Predict Churn</copy>
         ```
     
-    - **Data Source:** DW_TABLE
+    - **Data Source:** CNVG.DW_TABLE
 
     - **Predict:** AFFINITY_CARD
 
@@ -103,7 +103,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/faster-results.png)
 
-9. Once it is finish, we can see which are the columns or features that have bigger impact in our model. **We can see that emotion is very important**.
+9. Once it is finished, we can see which are the columns or features that have bigger impact in our model. The prediction will take a few minutes, be patience!. **We can see that emotion is very important**.
 
     ![Create Warehouse](./images/importance.png)
 
@@ -121,17 +121,25 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/open-notebook.png)
 
-4. We need to define the name of the model to be stored inside of the database. For that we need to add a new parameter called **model\_\_\_name** in the box called **Build MODEL\_NAME\_TITLE model**. You can **copy** from this page. Once you **have add** it, you can click on the **Play** button to **Run all the paragraphs**.
+4. We need to define the name of the model to be stored inside of the database. For that we need to add a new parameter called **model\_name** in the box called **Build MODEL\_NAME\_TITLE model** at the very end of the last sentence of this box.
+    - At the moment it looks like:
+        - **dt\_mod = dt\_mod.fit(X\_train, y\_train , case\_id = 'CUST\_KEY')**
+    - And it should look like:
+        - **dt\_mod = dt\_mod.fit(X\_train, y\_train , case\_id = 'CUST\_KEY', model\_name='CHURN\_MODEL')**
 
-    ```
+     ```
         <copy> 
-            ,model_name='CHURN_MODEL'
+            , model_name='CHURN_MODEL'
         </copy>
     ```
 
     ![Create Warehouse](./images/store-model.png)
 
-5. We can **validate** if our model has been stored inside of the database. We are going to **run** a simple query, finding from our customer if they are likely to have our **affinity card and their probability**.
+5. Once you **have add** it, you can click on the **Play** button to **Run all the paragraphs**. If you get a confirmation message to **Run all paragraphas?**, answer **OK**.
+
+    ![Run all paragraphs ](./images/run-all.png)
+
+6. We can **validate** if our model has been stored inside of the database. We are going to **run** a simple query, in **SQL** section part of Database Actions as **CNVG** user, finding from our customer if they are likely to have our **affinity card and their probability**.
 
     ```
         <copy> 

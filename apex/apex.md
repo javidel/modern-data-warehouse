@@ -159,9 +159,9 @@ This lab assumes you have done all the other labs.
             <copy>Top Influencers</copy>
         ```
     - **Table or View:** INFLUENCERS
-    - **Label Column:** NAME
+    - **Label Column:** name
     - **Value:** Column Value
-    - **Value Column:** PAGERANK
+    - **Value Column:** pagerank
 
     ![Select SQL](./images/chart3.png)
 
@@ -243,7 +243,7 @@ This lab assumes you have done all the other labs.
     
     ![Select SQL](./images/save-changes.png)
 
-6. Once it is saved, we can click on **Run** again to visualize the changes.
+6. Once it is **saved**, we can click on **Run** again to visualize the changes.
 
     ![Select SQL](./images/run-final.png)
 

@@ -128,7 +128,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             create table sentiment_results as select ctx_doc.sentiment_aggregate(
             index_name => 'sentiment_index',
             textkey    => id 
-            ) sentiment,id, text,name
+            ) sentiment, id, text, name
             from mv_tweets;
         </copy>
     ```

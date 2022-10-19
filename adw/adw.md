@@ -36,7 +36,7 @@ Estimated Lab Time: 15 minutes.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
 
-    ![Select Autonomous Data Warehouse](./images/select_autonomous.png)
+    ![Select Autonomous Data Warehouse](./images/select-autonomous.png)
 
     This will take you to the management console page.
 

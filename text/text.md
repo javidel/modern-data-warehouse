@@ -2,7 +2,11 @@
 
 ## Introduction
 
-Oracle Text provides the capability of searching text using specific indices. Using this indices, we can run sentiment analysis over our tweets.
+Oracle Text provides specialized text indexes for traditional full text retrieval applications such as - website searching, e-business
+catalogs, document classification and routing applications, text warehousing, document libraries and archives.
+Oracle Text can filter and extract content from different document formats, including popular ones like the Microsoft Office file formats, the Adobe PDF family of formats, HTML and XML.
+
+Oracle Text enables you to perform sentiment analysis for a topic or document by using sentiment classifiers that are trained to identify sentiment metadata. We are going to use this feature to categorize the sentiment of each tweet. 
 
 Estimated Lab Time: 15 minutes.
 

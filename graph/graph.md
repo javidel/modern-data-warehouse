@@ -218,7 +218,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Open Shell](./images/open-cloud-shell.png) 
 
-    ![Shell](./images/shell-open.PNG) 
+    ![Shell](./images/shell-open.png) 
 
 2. Once the cloud shell has started, **run** the following commands to generate a **ssh key**.
 

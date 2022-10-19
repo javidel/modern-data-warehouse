@@ -25,7 +25,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 1: Create materialized view over JSON data
 
-1. Before we create the Oracle Text index, we are goint to create a **materialized view**. We are going to take advantage of the JSON utilities. Click on **New Collection View**.
+1. Before we create the Oracle Text index, we are going to create a **materialized view**. We are going to take advantage of the JSON utilities. Click on **New Collection View**.
 
     ![Get view](./images/get-view.png)
 
@@ -51,7 +51,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 7. **Paste** the SQL we got from JSON.
 
-    ![Click Close](./images/paste-sql.PNG)
+    ![Click Close](./images/paste-sql.png)
 
 8. **Add the create materialized view statement** at the beginning of the query, like in the screenshoot:
 
@@ -83,7 +83,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 2: Create Oracle Text Index
 
-1. Let's create the **lexer**. Click on the **Run** button to execute the statement.
+1. Let's create the **lexer**. You can create your own lexer to train and classify the tweets based on the content. In this exercise we are going to use the default one. Click on the **Run** button to execute the statement.
 
     ```
         <copy> 

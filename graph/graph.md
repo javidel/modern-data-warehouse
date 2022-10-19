@@ -2,7 +2,9 @@
 
 ## Introduction
 
-Oracle Graph allows to discover patterns in the data. We will use the tweets to see how the users talk with each other in order to get more information.
+Oracle Graph eliminate the need to set up a separate database and move data. Analysts and developers can perform fraud detection in banking, find connections and link to data, and improve traceability in smart manufacturing, all while gaining enterprise-grade security, ease of data ingestion, and strong support for data workloads.
+
+In this Lab you are going to use the Twitter data into a Graph to see how users interact with others in order to find new insights.
 
 Estimated Lab Time: 40 minutes.
 

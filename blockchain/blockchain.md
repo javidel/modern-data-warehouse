@@ -124,7 +124,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 3. Select our **revenue.csv** file.
 
-    ![Select File](./images/select-file.PNG)
+    ![Select File](./images/select-file.png)
 
 4. Once it is **selected**, we are going to **define** into which table we want to load. Click on the **Edit** button.
 

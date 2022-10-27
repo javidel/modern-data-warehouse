@@ -103,7 +103,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/faster-results.png)
 
-9. Once it is finished, we can see which are the columns or features that have bigger impact in our model. The prediction will take a few minutes, be patience!. **We can see that emotion is very important**.
+9. Once it is finished, we can see which are the columns or features that have bigger impact in our model. **The prediction will take a few minutes, be patience!**. **We can see that emotion is very important**.
 
     ![Create Warehouse](./images/importance.png)
 
@@ -121,7 +121,8 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/open-notebook.png)
 
-4. We need to define the name of the model to be stored inside of the database. For that we need to add a new parameter called **model\_name** in the box called **Build MODEL\_NAME\_TITLE model** at the very end of the last sentence of this box.
+4. We need to define the name of the model to be stored inside of the database. For that we need to add a new parameter called **model\_name** in the box called **Build MODEL\_NAME\_TITLE model** at the very end of the last sentence of this box. **Be sure you add the new part before `)`, otherwise, you will get an error**.
+
     - At the moment it looks like:
         - **dt\_mod = dt\_mod.fit(X\_train, y\_train , case\_id = 'CUST\_KEY')**
     - And it should look like:

@@ -1,20 +1,19 @@
 # Modern Data Warehouse Workshop
 
-![Intro Modern Data Warehouse Workshop](./images/converged.png)
-
 ## Introduction
 
 Oracle Autonomous Data Warehouse provides unique capabilities thanks to its integrated multi-model and multi-workload database, also called converged. The goal of this workshop is to show the instant value and new insights when taking advantage of all its capabilities.
+
+![Intro Modern Data Warehouse Workshop](./images/converged.png)
 
 ### **Who Should Use This Workshop?**
 
 Everyone can benefit from doing the exercises listed in this guide: technical experts (data warehouse architects to database administrators), business users who want to focus on extracting meaning and insight from their own data, along with data scientists who want to build machine learning models within the context of a data warehouse project.
 
 
-
 ### **Welcome to Modern Data Warehouse Workshop**
 
-In this workshop we are going to use different capabilities to integrate structured and non-structured data, and provide new business value. We are going to be a company who is shipping different products to our customers. As many of them buy as a “guest mode”, is difficult to find patterns or improve the business. Therefore, we are going to collect Twitter data to discover them. As a result of the workshop, we will learn which customers are on risk of “churn” or they are not happy with our service and identify patters inside of our data.
+In this workshop we are going to use different capabilities to integrate structured and non-structured data and provide new business value. We are going to be a company who is shipping different products to our customers. As many of them buy in as a “guest mode”, it is difficult to find patterns or improve the business. Therefore, we are going to collect Twitter data to discover them. As a result of the workshop, we will learn which customers are at risk of “churn” or they are not happy with our service and identify patterns inside of our data.
 
 During this workshop, we are going to use these capabilities: JSON, Oracle Text, Graph, Blockchain, Spatial, AutoML and APEX.
 

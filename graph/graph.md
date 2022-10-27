@@ -119,15 +119,16 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 20. Execute the **COPY\_COLLECTION** utility for loading the JSON file into the collection. We need to provide the **credential name** created on previous task, **json_cred**, the **collection name**, **friend\_of** and the **URL** where the JSON is located, that is the URL that we copied on the step number 8 from thislab. You should have all this information from steps before. **Change** the information and **Execute** it.
 
     ```
-        <copy> BEGIN 
+        <copy> 
+        BEGIN 
             DBMS_CLOUD.COPY_COLLECTION(    
-            collection_name => 'friend_of', 
-            credential_name=>'json_cred',   
-            file_uri_list => 'YOUR_URL',
-            format => '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}'
+                collection_name => 'friend_of', 
+                credential_name=>'json_cred',   
+                file_uri_list => 'YOUR_URL',
+                format => '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}'
             );
-            END;
-            /
+        END;
+        /
         </copy>
     ```
 
@@ -247,7 +248,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/public-key-content.png) 
 
-4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burguer Menu**, after **Marketpace** section and finnaly **All Applications**.
+4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burguer Menu**, after **Marketpace** section and finnaly **All Applications**. If you see an error collecting all applications, please try again.
 
     ![Shell](./images/go-to-marketplace.png) 
 
@@ -273,7 +274,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/graph-config1.png)
 
-9. Select the VCN and the **Public Subnet** we already created, **Public Subnet-vcn_graph (Regional)**. **Be sure you have selected the correct compaertment, otherwie, you will not be capable of selected the VCN and Subnet**.
+9. Select the VCN and the **Public Subnet** we already created, **Public Subnet-vcn_graph (Regional)**. **Be sure you have selected the correct compartment in network and subnet sections, otherwise, you will not be capable of selected the VCN and Subnet**.
 
     ![Shell](./images/graph-config2.png)
 
@@ -336,7 +337,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/copy-ip.png)
 
-22. Go back to the **Cloud shell**. **Run** the following command to copy the wallet into the Graph Server. **Remember to use YOUR IP that we copied in the previous step**.
+22. Go back to the **Cloud shell**. **Run** the following command to copy the wallet into the Graph Server. **Remember to use YOUR IP that we copied in the previous step**. Remember to **type `yes`** to complete the command.
 
     ```
         <copy> 
@@ -357,7 +358,15 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
     ``` 
         <copy>
             cd /etc/oracle/graph/wallets/
+        </copy>
+    ```
+    ```
+        <copy>
             unzip Wallet_MODERNDW.zip
+        </copy>
+    ```
+    ```
+        <copy>
             chgrp oraclegraph *
         </copy>
     ```

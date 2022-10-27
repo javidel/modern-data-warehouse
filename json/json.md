@@ -68,9 +68,13 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 2: Create credential for Autonomous Database
 
-1. Now we have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your **profile icon** and then on **My profile**. **Take a note** of your user as you will need it for later.
+1. We have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your **profile icon** and then on **My profile**. **Take a note** of your user as you will need it for later.
 
     ![Find credentials](./images/go-to-credential2.png)
+
+    If you don't see **My profile** section, please copy your user from the information that you can see in this menu under Profile. The format should be `oracleidentitycloudservice/your_email`.
+
+    ![Find credentials](./images/go-to-credential3.png)
 
 2. Let's create a new token for the Autonomous Database. Click on **Auth Tokens** under the **Resources** section on the left size of the screen.
 
@@ -156,14 +160,15 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
     - **password**, it is the **Auth token** that we copied on step number 6 of this task.
 
     ```
-        <copy> begin
+        <copy> 
+        begin
             dbms_cloud.create_credential (
-            credential_name => 'json_cred',
-            username        => 'your_user',
-            password        => 'your_key'
-            );
+                credential_name => 'json_cred',
+                username        => 'your_user',
+                password        => 'your_key'
+                );
             end;
-            /
+        /
         </copy>
     ```
 
@@ -197,35 +202,36 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 5. Copy and paste the following tweet. Then click on the **Create** button.
     
     ```
-        <copy>{
-                "id": 500,
-                "text": "Don't buy! the company took my money and sent me an email telling me the product was shipped.Still waiting after a month. Very dissapointed!",
-                "favorited": false,
-                "created_at": "Tue Aug 02 17:29:50 +0000 2022",  
-                "retweet_count": 0,
-                "reply_count": 0,
-                "quote_count": 0,
-                "retweeted": false,
-                "location":"Rome",
-                "latitude": 41.889214119987905,
-                "longitude":12.492245184925652,
-                "in_reply_to_user_id": 31444922,
-                "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
-                "favorite_count": 0,
-                "user": {
-                    "name": "user01",
-                    "identifier": 1,
-                    "description": "loves cupcakes and cats",
-                    "geo_enabled": true,
-                    "friends_count": 5000,
-                    "protected": false,
-                    "favourites_count": 35150,
-                    "followers_count": 306,
-                    "is_translator": false,
-                    "statuses_count": 9029,
-                    "verified": false 
-                }
-                }
+        <copy>
+        {
+            "id": 500,
+            "text": "Don't buy! the company took my money and sent me an email telling me the product was shipped.Still waiting after a month. Very dissapointed!",
+            "favorited": false,
+            "created_at": "Tue Aug 02 17:29:50 +0000 2022",  
+            "retweet_count": 0,
+            "reply_count": 0,
+            "quote_count": 0,
+            "retweeted": false,
+            "location":"Rome",
+            "latitude": 41.889214119987905,
+            "longitude":12.492245184925652,
+            "in_reply_to_user_id": 31444922,
+            "source": "<a href=\"http://twitter.com/download/iphone\" rel=\"nofollow\">Twitter for iPhone</a>",
+            "favorite_count": 0,
+            "user": {
+                "name": "user01",
+                "identifier": 1,
+                "description": "loves cupcakes and cats",
+                "geo_enabled": true,
+                "friends_count": 5000,
+                "protected": false,
+                "favourites_count": 35150,
+                "followers_count": 306,
+                "is_translator": false,
+                "statuses_count": 9029,
+                "verified": false 
+            }
+        }
         </copy>
     ```
 
@@ -238,15 +244,16 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 7. Execute the **COPY_COLLECTION** utility for loading the JSON file into the collection. We need to provide the **credential name** created on previous task, **json\_cred**, the **collection name**, **sample\_tweets** and the **URL** where the JSON is located, that is the URL that we copied on the step number 10 from the previous lab. You should have all this information from steps before. **Change** the information and **Execute** it.
 
     ```
-        <copy> BEGIN 
+        <copy> 
+        BEGIN 
             DBMS_CLOUD.COPY_COLLECTION(    
                 collection_name => 'sample_tweets', 
                 credential_name=>'json_cred',   
                 file_uri_list => 'your_url',
                 format => '{"recorddelimiter" : "0x''01''", "unpackarrays" : "TRUE", "maxdocsize" : "10240000"}'
             );
-            END;
-            /
+        END;
+        /
         </copy>
     ```
 
@@ -282,8 +289,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
     ```
         <copy> 
             select s.json_document.id , s.json_document.text , s.json_document.retweeted,s.json_document.reply_count
-        from sample_tweets s
-
+            from sample_tweets s
         </copy>
     ```
 
@@ -294,8 +300,8 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
     ```
         <copy> 
             select s.json_document.id , s.json_document.text , s.json_document.retweeted,s.json_document.reply_count,s.json_document.location
-        from sample_tweets s
-        where s.json_document.location='Paris'
+            from sample_tweets s
+            where s.json_document.location='Paris'
         </copy>
     ```
 

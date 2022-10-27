@@ -39,8 +39,6 @@ Estimated Lab Time: 15 minutes.
     ![Select Autonomous Data Warehouse](./images/select-autonomous.png)
 
     This will take you to the management console page.
-
-    To learn more about comparments, see [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
     
 2. To create a new instance, click the blue **Create Autonomous Database** button.
 
@@ -50,8 +48,9 @@ Estimated Lab Time: 15 minutes.
 
     - **Compartment:** Verify that a compartment (&lt;tenancy_name&gt;) is selected.
 
-    By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
-    By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
+        By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
+        
+        To learn more about comparments, see [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
 
     - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `MODERNDW`.
         ```
@@ -59,6 +58,7 @@ Estimated Lab Time: 15 minutes.
         ```
     
     - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
+
     - **Workload Type:** Autonomous Data Warehouse  
     
     - **Deployment Type:** Shared Infrastructure

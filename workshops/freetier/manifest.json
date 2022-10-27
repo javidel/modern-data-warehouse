@@ -26,29 +26,29 @@
             "filename": "./../../text/text.md"
         },
         {
-            "title": "Lab 4: Load Transactional Data on Blockchain table",
-            "description": "In this Lab you will load Transactional Data on Blockchain table.",
-            "filename": "./../../blockchain/blockchain.md"
-        },
-        {
-            "title": "Lab 5: Use Spatial to analyze tweets location",
-            "description": "In this Lab you will analyse using Spatial if bad comments are far from the warehouse.",
-            "filename": "./../../spatial/spatial.md"
-        },
-        {
-            "title": "Lab 6: Create an insight application with APEX",
-            "description": "In this Lab you will show the customers willing to churn and visualize the influencers by using APEX.",
-            "filename": "./../../apex/apex.md"
-        },
-        {
-            "title": "Bonus Content - Lab 7: Identify influencers using Graph",
+            "title": "BONUS CONTENT - Lab 4: Identify influencers using Graph",
             "description": "In this Lab you will identify influencers using Graph.",
             "filename": "./../../graph/graph.md"
         },
         {
-            "title": "Bonus Content - Lab 8: Predict Customer Churn with AutoML",
+            "title": "Lab 5: Load Transactional Data on Blockchain table",
+            "description": "In this Lab you will load Transactional Data on Blockchain table.",
+            "filename": "./../../blockchain/blockchain.md"
+        },
+        {
+            "title": "Lab 6: Use Spatial to analyze tweets location",
+            "description": "In this Lab you will analyse using Spatial if bad comments are far from the warehouse.",
+            "filename": "./../../spatial/spatial.md"
+        },
+        {
+            "title": "BONUS CONTENT - Lab 7: Predict Customer Churn with AutoML",
             "description": "In this Lab you will combine Ecommerce Transactional data with Twitter info, to predict if customer is going to 'churn' by cancelling their premium card.",
             "filename": "./../../automl/automl.md"
+        },
+        {
+            "title": "Lab 8: Create an insight application with APEX",
+            "description": "In this Lab you will show the customers willing to churn and visualize the influencers by using APEX.",
+            "filename": "./../../apex/apex.md"
         },
         {
             "title": "Need Help?",

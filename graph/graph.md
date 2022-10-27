@@ -570,7 +570,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Store influencers](./images/influencers.png)
 
-5. If we go back to **SQL**, we should be able to **run** a simple query over that table.
+5. If we go back to **SQL**, we should be able to **run** a simple query over that table. Be sure you are connect as **CNVG** user.
 
     ```
         <copy> 

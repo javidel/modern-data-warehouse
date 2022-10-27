@@ -148,15 +148,16 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
             alter table sentiment_results add emotion varchar2(50);
             update sentiment_results
             set emotion = (case
-            when sentiment < 0 then 'Negative'
-            when sentiment = 0 then 'Neutral'
-            when sentiment > 0 then 'Positive'
-            end);
+                when sentiment < 0 then 'Negative'
+                when sentiment = 0 then 'Neutral'
+                when sentiment > 0 then 'Positive'
+                end
+            );
             commit;
         </copy>
     ```
 
-    Check that the **statements has being completed successfully**.
+    Check that the **alter, update and commit statements has being completed successfully**.
 
     ![Create Lexer](./images/alter-table.png)
 

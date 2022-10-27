@@ -134,7 +134,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     - **Option:** Insert into table
     
-    - **Name:** Revenue
+    - **Name:** REVENUE
 
     ![Set Definition](./images/set-definition.png)
 

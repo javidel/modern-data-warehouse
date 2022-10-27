@@ -266,6 +266,8 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 8. Now configure the Graph Server:
     
+    - **Compartment:** Be sure you have selected your compartment
+    
     - **Availability Domain:** Choose any available
 
     - **Shape:** VM.Standard.E2.1

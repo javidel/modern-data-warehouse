@@ -57,7 +57,10 @@ Estimated Lab Time: 15 minutes.
         <copy>MODERNDW</copy>
         ```
     
-    - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not a mandatory one.
+    - **Database Name:** Enter any database name you choose that fits the requirements for ADW. The database name must consist of letters and numbers only, starting with a letter. The maximum length is 14 characters. You can leave the name provided. That field is not mandatory but for this demo purpose, I have called my database `MODERNDW`.
+        ```
+        <copy>MODERNDW</copy>
+        ```
 
     - **Workload Type:** Autonomous Data Warehouse  
     
@@ -79,7 +82,7 @@ Estimated Lab Time: 15 minutes.
     
     - **CPU Count:** 1
     
-    - **Storage Capacity (TB):** 1
+    - **Storage Capacity (TB):** 1 or 0,02 Gb if you had chosen the **Always Free option**.
 
     - **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
     

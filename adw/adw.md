@@ -143,7 +143,7 @@ You have just created an Autonomous Database with the latest features of Oracle 
 
 ## Task 2: Create a new Autonomous Database user
 
-1. In order to create a new user, we have to click on **Database Actions** button.
+1. In order to create a new user, we have to click on **Database Actions** button. We will connect automatically as **ADMIN** user, using the same credentials that we used on Task 1 when provisioning the database.
 
     ![ADB Select Database Actions](./images/adb-dbactions.png)
 

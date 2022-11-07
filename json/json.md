@@ -72,7 +72,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Find credentials](./images/go-to-credential2.png)
 
-    If you don't see **My profile** section, please copy your user from the information that you can see in this menu under Profile. The format should be `oracleidentitycloudservice/your_email`.
+    If you don't see **My profile** section, please copy your user from the information that you can see in this menu under **Profile**. The format should be `oracleidentitycloudservice/your_email`.
 
     ![Find credentials](./images/go-to-credential3.png)
 

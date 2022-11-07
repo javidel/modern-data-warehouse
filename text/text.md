@@ -141,7 +141,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Create Lexer](./images/create-table.png)
 
-3. Let's **add some metadata**, to identify easier which comment is negative, neutral or positive. Click on the **Run** button to execute the statements.
+3. Let's **add some metadata**, to identify easier which comment is negative, neutral or positive. Be sure you **Run the script** and not just statement this time, otherwise you will not modify the table at all.
 
     ```
         <copy> 
@@ -157,7 +157,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that the **alter, update and commit statements has being completed successfully**.
+    Check once more that the **alter, update and commit statements has being completed successfully**.
 
     ![Create Lexer](./images/alter-table.png)
 

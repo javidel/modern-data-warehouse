@@ -32,7 +32,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         <copy>JSON_Full_tweets.json</copy>
         ```
 
-2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket. Open a new web browser window, accss to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Storage** from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
+2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket. Open a new web browser window, access to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Storage** from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
 
     ![Go to Buckets](./images/create-bucket.png)
 

@@ -138,7 +138,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 2: Create a VCN for the Graph Server
 
-1. We need to create a Virtual Cloud Network (VCN) before we provision the Graph Server. Go to **Networking** and then **Virtual Cloud Network**.
+1. We need to create a Virtual Cloud Network (VCN) before we provision the **Graph Server**. Open a new web browser window, access to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Networking** and then **Virtual Cloud Network**.
 
     ![Find VCN](./images/find-vcn.png)
 
@@ -215,7 +215,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 3: Create Oracle Graph Server
 
-1. Before we create the Graph Server, we need to generate a **ssh key**. For that we are going to use the **cloud shell**. 
+1. Before we create the Graph Server, we need to generate a **ssh key**. For that we are going to use the **cloud shell**. You will get announcements and messages in green when you open cloud shell, spend a few minutes reading them, then can be useful for you!.
 
     ![Open Shell](./images/open-cloud-shell.png) 
 
@@ -248,7 +248,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/public-key-content.png) 
 
-4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burguer Menu**, after **Marketpace** section and finnaly **All Applications**. If you see an error collecting all applications, please try again.
+4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burguer Menu**, after **Marketpace** section and finaly **All Applications**. If you see an error collecting all applications, please try again.
 
     ![Shell](./images/go-to-marketplace.png) 
 

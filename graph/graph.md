@@ -335,7 +335,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/find-server.png)
 
-21. Copy the **Public IP** from the **oraclegraph-instance** that you can find on the list of instances created. We are going to need it for the next exercise.
+21. Copy the **Public IP** from the **oraclegraph-instance** that you can find on the list of instances created. We are going to need it for the next exercise, so write it down for later on.
 
     ![Shell](./images/copy-ip.png)
 
@@ -486,7 +486,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/define-graph.png)
 
-17. Let's **execute** the definition.
+17. Let's **execute** the definition. It should take a few minutes, be patience!
 
     ```   
         <copy> 

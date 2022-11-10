@@ -27,7 +27,7 @@ The aim of this workshop is to explore how Autonomous Data Warehouse can support
 
 * Quickly and easily load structured and unstructured data into an Autonomous Data Warehouse
 * Sentiment Analysis with Oracle Text 
-* Explore and discover relationships in social networks using Oracle Graph
+* Explore and discover relationships in social networks using Oracle Graph 
 * Learn more about how Autonomous Data Warehouse stores and manages your data
 * Load transactional data into Blockchain table to ensure fraud protection 
 * Use Oracle Spatial to perform spatial analysis on business data quickly and easily

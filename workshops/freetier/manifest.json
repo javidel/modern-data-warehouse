@@ -26,19 +26,19 @@
             "filename": "./../../text/text.md"
         },
         {
-            "title": "BONUS CONTENT - Lab 4: Identify influencers using Graph",
-            "description": "In this Lab you will identify influencers using Graph.",
-            "filename": "./../../graph/graph.md"
-        },
-        {
-            "title": "Lab 5: Load Transactional Data on Blockchain table",
+            "title": "Lab 4: Load Transactional Data on Blockchain table",
             "description": "In this Lab you will load Transactional Data on Blockchain table.",
             "filename": "./../../blockchain/blockchain.md"
         },
         {
-            "title": "Lab 6: Use Spatial to analyze tweets location",
+            "title": "Lab 5: Use Spatial to analyze tweets location",
             "description": "In this Lab you will analyse using Spatial if bad comments are far from the warehouse.",
             "filename": "./../../spatial/spatial.md"
+        },
+        {
+            "title": "Lab 6: Create an insight application with APEX",
+            "description": "In this Lab you will show the customers willing to churn and visualize the influencers by using APEX.",
+            "filename": "./../../apex/apex.md"
         },
         {
             "title": "BONUS CONTENT - Lab 7: Predict Customer Churn with AutoML",
@@ -46,9 +46,9 @@
             "filename": "./../../automl/automl.md"
         },
         {
-            "title": "Lab 8: Create an insight application with APEX",
-            "description": "In this Lab you will show the customers willing to churn and visualize the influencers by using APEX.",
-            "filename": "./../../apex/apex.md"
+            "title": "BONUS CONTENT - Lab 8: Identify influencers using Graph",
+            "description": "In this Lab you will identify influencers using Graph.",
+            "filename": "./../../graph/graph.md"
         },
         {
             "title": "Need Help?",

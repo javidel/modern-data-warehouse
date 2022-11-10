@@ -486,7 +486,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/define-graph.png)
 
-17. Let's **execute** the definition. It should take a few minutes, be patience!
+17. Let's **execute** the definition.
 
     ```   
         <copy> 

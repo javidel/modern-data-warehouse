@@ -116,7 +116,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 1. Let's **load the data**, select the **Data Load** section from the menu.
 
-    ![Load Data](./images/select-load.png)
+    ![Load Data](./images/select-load2.png)
 
 2. We are going to **upload our local file**. Select **Local File** option and click **Next**.
 

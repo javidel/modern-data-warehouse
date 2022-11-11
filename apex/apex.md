@@ -215,7 +215,6 @@ This lab assumes you have done all the other labs.
 
     ![Select SQL](./images/final-dasbhoard.PNG)
 
-    As you can see, we haven't defined the **fourth chart**. Let's modify that chart in the next task.
 
 
 

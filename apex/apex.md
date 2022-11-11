@@ -154,30 +154,46 @@ This lab assumes you have done all the other labs.
     ![Select SQL](./images/goto3.png)
 
     - **Type:** Bar Chart
-    - **Chart Name:** Top Influencers
+    - **Chart Name:** Top Revenue
         ```
-            <copy>Top Influencers</copy>
+            <copy>Top Revenue</copy>
         ```
-    - **Table or View:** INFLUENCERS
-    - **Label Column:** name
-    - **Value:** Column Value
-    - **Value Column:** pagerank
+    - **Table or View:** Revenue
+    - **Label Column:** ORDER_TYPE
+    - **Value:** SUM
+    - **Value Column:** REVENUE
 
-    ![Select SQL](./images/chart3.png)
+    ![Select SQL](./images/chart3-new.png)
 
-9. Click on **Add Page**.
+9. Let's populate our **fourth chart**.
 
-    ![Select SQL](./images/finish-page.png)
+    ![Select SQL](./images/goto4.png)
 
-9. Select **Check All** and click on **Create Application**.
+    - **Type:** Pie Chart
+    - **Chart Name:** Location Popularity
+        ```
+            <copy>Location Popularity</copy>
+        ```
+    - **Table or View:** MV_TWEETS
+    - **Label Column:** LOCATION
+    - **Value:** COUNT
+    - **Value Column:** LOCATION
+
+    ![Select SQL](./images/chart4.png)
+
+10. Click on **Add Page**.
+
+    ![Select SQL](./images/chart4-2.png)
+
+11. Select **Check All** and click on **Create Application**.
 
     ![Select SQL](./images/terminate-app.png)
 
-10. Let's have first look into our application. Click on the **Run** button.
+12. Let's have first look into our application. Click on the **Run** button.
 
     ![Select SQL](./images/run-app.png)
 
-11. Log in with the **CNVG** user. Then click on **Sign in**.
+13. Log in with the **CNVG** user. Then click on **Sign in**.
 
     - **Username:** CNVG
         ```
@@ -191,65 +207,17 @@ This lab assumes you have done all the other labs.
 
     ![Select SQL](./images/log-cnvg.png)
 
-12. Click on **Dashboard**.
+14. Click on **Dashboard**.
 
     ![Select SQL](./images/select-dashboard.png)
 
-13. We can see our insight application with the **reports**.
+15. We can see our insight application with the **reports**.
 
-    ![Select SQL](./images/first-report.png)
+    ![Select SQL](./images/final-dasbhoard.PNG)
 
     As you can see, we haven't defined the **fourth chart**. Let's modify that chart in the next task.
 
-## Task 3: Modify a chart
 
-1. Let's **modify the last chart**. We need to go back to the **Application Builder** tab, and click on the **Dashboard** page.
-
-    ![Select SQL](./images/dashboard-page.png)
-
-2. Look for the component **Chart 4** that we didn't configure before,  and **Select** it.
-
-    ![Select SQL](./images/select-chart4.png)
-
-3. You will see the **default configuration** for the chart at the right part of the window. 
-
-    ![Select SQL](./images/default-config.png)
-
-4. We need to set the **new parameters**. We are going to use the **Machine Learning algorithm** we got from the AutoML lab. You need to modify the following:
-
-    - **Title:** Possible new customers
-        ```
-            <copy>Possible new customers</copy>
-        ```
-
-    - **Type:** Classic Report
-
-    - **Location:** Local Database
-
-    - **Type:** SQL Query
-
-    - **Query:** 
-
-        ```
-            <copy> 
-                select DISTINCT cust_key,AFFINITY_CARD,PREDICTION(cnvg.churn_model USING *) MY_PREDICTION,PREDICTION_PROBABILITY(cnvg.churn_model USING *) as PROBABILITY
-                from dw_table
-                where AFFINITY_CARD=0
-                and PREDICTION(cnvg.churn_model USING *)=1
-            </copy>
-        ```
-
-5. Then click on **Save** Changes.
-    
-    ![Select SQL](./images/save-changes.png)
-
-6. Once it is **saved**, we can click on **Run** again to visualize the changes.
-
-    ![Select SQL](./images/run-final.png)
-
-7. We can see the **new table with the customers who are candidate to have an affinity card.**
-
-    ![Select SQL](./images/final-report.png)
 
 _Congratulations! Well done!_
 

@@ -270,7 +270,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
     
     - **Availability Domain:** Choose any available
 
-    - **Shape:** VM.Standard.E2.1
+    - **Shape:** VM.Standard.E2.1 or VM.Standard.E2.1.Micro shapes
 
     - **SSH Public Key:** Copy from the cloud shell. **Be sure you don't miss any character at the very begining and at the end.**
 

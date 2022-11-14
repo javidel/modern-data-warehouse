@@ -421,7 +421,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/select-view.png)
 
-10. Add **All columns** and click on **Create**.
+10. Click **Add All** to add all columns and click on **Create**.
 
     ![Shell](./images/create-view.png)
 

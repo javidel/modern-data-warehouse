@@ -23,7 +23,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 1: Load Friends JSON Data
 
-1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json). We recommend you to call the file **friend\_of.json**.
+1. Before start the exercise you need to download the data that we will use. **Click** on the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json "open json file") to see the JSON dataset and **Save it** using **Control S** or different method to save files. We recommend you to call the file **friend\_of.json**.
 
     - **File name:** friend\_of.json
     ```

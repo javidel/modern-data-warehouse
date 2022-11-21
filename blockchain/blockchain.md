@@ -25,7 +25,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Create Blockchain Table
 
-1. Before start the exercise you need to **Download the Data**. Download the **CSV dataset** from the following [LINK] (https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/revenue.csv). 
+1. Before start the exercise you need to **Download the Data**. Download the **CSV dataset** from the following [LINK] (https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/revenue.csv "download csv dataset"). 
 
 
 2. Let's create the **Blockchain table**. We need to go back to **SQL** menu on the **Database Actions** section. If you are still connected as CNVG user, you can go to step number 9 from this lab and step. Otherwise, you can follow the following steps.

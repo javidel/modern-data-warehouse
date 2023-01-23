@@ -62,7 +62,7 @@ Estimated Lab Time: 15 minutes.
         <copy>MODERNDW</copy>
         ```
 
-    - **Workload Type:** Autonomous Data Warehouse  
+    - **Workload Type:** Data Warehouse  
     
     - **Deployment Type:** Shared Infrastructure
     

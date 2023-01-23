@@ -29,7 +29,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Get view](./images/get-view.png)
 
-2. **Add All** the columns to the view.
+2. Click **Add All** to add all the columns to the view.
 
     ![Add all columns](./images/add-all.png)
 

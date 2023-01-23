@@ -23,7 +23,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 ## Task 1: Load friends JSON data
 
-1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json). We recommend you to call the file **friend\_of.json**.
+1. Before start the exercise you need to download the data that we will use. **Click** on the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json "open json file") to see the JSON dataset and **Save it** using **Control S** or different method to save files. We recommend you to call the file **friend\_of.json**.
 
     - **File name:** friend\_of.json
     ```
@@ -270,7 +270,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
     
     - **Availability Domain:** Choose any available
 
-    - **Shape:** VM.Standard.E2.1
+    - **Shape:** VM.Standard.E2.1 or VM.Standard.E2.1.Micro shapes
 
     - **SSH Public Key:** Copy from the cloud shell. **Be sure you don't miss any character at the very beginning and at the end.**
 
@@ -421,7 +421,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/select-view.png)
 
-10. Add **All columns** and click on **Create**.
+10. Click **Add All** to add all columns and click on **Create**.
 
     ![Shell](./images/create-view.png)
 

@@ -15,7 +15,7 @@ Estimated Lab Time: 15 minutes.
 In this lab, you will:
 
 * Create a Oracle Text Index
-* Get sentyment from text
+* Get sentiment from text
 * Search over text
 
 
@@ -53,7 +53,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Click Close](./images/paste-sql.png)
 
-8. **Add the create materialized view statement** at the beginning of the query, like in the screenshoot:
+8. **Add the create materialized view statement** at the beginning of the query, like in the screenshot:
 
     ```
         <copy> 
@@ -65,7 +65,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 9. Click on the **Run** button to create the materialized view.
 
-    Check that the **MV_TWEETS Materialied view has being created**.
+    Check that the **MV_TWEETS Materialized view has being created**.
 
     ![Select count](./images/run-view.png)
 
@@ -81,7 +81,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Select count](./images/create-pk.png)
 
-## Task 2: Create Oracle Text Index
+## Task 2: Create Oracle Text index
 
 1. Let's create the **lexer**. You can create your own lexer to train and classify the tweets based on the content. In this exercise we are going to use the default one. Click on the **Run** button to execute the statement.
 
@@ -109,7 +109,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Create Lexer](./images/create-index.png)
 
-## Task 3: Get Sentiment Analysis
+## Task 3: Get sentiment analysis
 
 1. As we have our index created, let's have a look to the **sentiment**. Click on the **Run** button to execute the statement.
 
@@ -172,10 +172,12 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Create Lexer](./images/text-search.png)
 
+You can **proceed to the next lab.**
+
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

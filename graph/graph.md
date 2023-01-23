@@ -21,7 +21,7 @@ In this lab, you will:
 
 This lab assumes you have created the Autonomous Data Warehouse database and you have loaded the JSON tweets from Lab 2.
 
-## Task 1: Load Friends JSON Data
+## Task 1: Load friends JSON data
 
 1. Before start the exercise you need to **Download the Data**. Download the JSON dataset from the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/friend_of.json). We recommend you to call the file **friend\_of.json**.
 
@@ -30,7 +30,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         <copy>friend_of.json</copy>
      ```
 
-2. We have a new dataset which has information about twitter's users followers. We are going to use this data to **build a graph**. First we need to upload this file into the object storage. First we need to create a bucket. Access to **Storage** from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
+2. We have a new dataset which has information about twitter's users followers. We are going to use this data to **build a graph**. First we need to upload this file into the object storage. First we need to create a bucket. Access to **Storage** from the **Oracle Cloud Console Burger Menu** and after **Buckets** section.
 
     ![Go to Storage](./images/go-to-storage.png)
 
@@ -116,7 +116,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Select upload](./images/back-to-sql.png)
 
-20. Execute the **COPY\_COLLECTION** utility for loading the JSON file into the collection. We need to provide the **credential name** created on previous task, **json_cred**, the **collection name**, **friend\_of** and the **URL** where the JSON is located, that is the URL that we copied on the step number 8 from thislab. You should have all this information from steps before. **Change** the information and **Execute** it.
+20. Execute the **COPY\_COLLECTION** utility for loading the JSON file into the collection. We need to provide the **credential name** created on previous task, **json_cred**, the **collection name**, **friend\_of** and the **URL** where the JSON is located, that is the URL that we copied on the step number 8 from this lab. You should have all this information from steps before. **Change** the information and **Execute** it.
 
     ```
         <copy> 
@@ -132,11 +132,11 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-    Check that the **PL/SQL procedure has being sucesfully completed**.
+    Check that the **PL/SQL procedure has being successfully completed**.
 
     ![Select upload](./images/load-json.png)
 
-## Task 2: Create a VCN for the Graph Server
+## Task 2: Create a VCN for the Graph server
 
 1. We need to create a Virtual Cloud Network (VCN) before we provision the **Graph Server**. Open a new web browser window, access to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Networking** and then **Virtual Cloud Network**.
 
@@ -213,7 +213,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
     ![Ingress Rule Added](./images/ingress-rule-added.png) 
 
 
-## Task 3: Create Oracle Graph Server
+## Task 3: Create Oracle Graph server
 
 1. Before we create the Graph Server, we need to generate a **ssh key**. For that we are going to use the **cloud shell**. You will get announcements and messages in green when you open cloud shell, spend a few minutes reading them, then can be useful for you!.
 
@@ -248,7 +248,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/public-key-content.png) 
 
-4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burguer Menu**, after **Marketpace** section and finaly **All Applications**. If you see an error collecting all applications, please try again.
+4. Now we are ready to provision the **Graph Server**. We can find it in the **marketplace**. Go from the **Oracle Cloud Console Burger Menu**, after **Marketplace** section and finally **All Applications**. If you see an error collecting all applications, please try again.
 
     ![Shell](./images/go-to-marketplace.png) 
 
@@ -272,7 +272,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     - **Shape:** VM.Standard.E2.1
 
-    - **SSH Public Key:** Copy from the cloud shell. **Be sure you don't miss any character at the very begining and at the end.**
+    - **SSH Public Key:** Copy from the cloud shell. **Be sure you don't miss any character at the very beginning and at the end.**
 
     ![Shell](./images/graph-config1.png)
 
@@ -375,7 +375,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell unzip](./images/unzip.png)
 
-## Task 4: Create a Graph
+## Task 4: Create a graph
 
 1. The **Graph Server is created**, now we need to **populate** the Graph. For simplicity, we are going to create a simpler table of twitter users and we are going to create a view on top of the friend_of JSON Collection. Let's **create the view** first. We need to go back to **JSON** menu on the **Database Actions** section. If you are still connected as CNVG user, you can go to step number 8 from this lab and step. Otherwise, you can follow the following steps.
 
@@ -433,7 +433,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/back-to-sql2.png)
 
-13. We need a p**rimary key** for our view. Also we are going to create a **simplified table** for our twitter users. **Run** the following statements.
+13. We need a **primary key** for our view. Also we are going to create a **simplified table** for our twitter users. **Run** the following statements.
 
     ```
         <copy> 
@@ -447,7 +447,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Shell](./images/prepare-data.png)
 
-14. Now we can finally create the **Graph**. Let's go back to our **cloud shell** once again to connect to the Graph Server. If you have disconnected you can conenct again via ssh.
+14. Now we can finally create the **Graph**. Let's go back to our **cloud shell** once again to connect to the Graph Server. If you have disconnected you can connect again via ssh.
 
     ```
         <copy> 
@@ -455,7 +455,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
         </copy>
     ```
 
-15. Let's connect with the **opg4py** utility. We are going to use the **cnvg** user and the password **Password123##**. **Be sure you type the passwrod correctly, otherwise, you can't connect to the Oracle Graph Server**.
+15. Let's connect with the **opg4py** utility. We are going to use the **cnvg** user and the password **Password123##**. **Be sure you type the password correctly, otherwise, you can't connect to the Oracle Graph Server**.
     ```
         <copy> 
             opg4py -b https://localhost:7007 -u cnvg
@@ -580,11 +580,12 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
     ![Show Influencers table](./images/show-influencers.png)
 
+You can **proceed to the next lab.**
 
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

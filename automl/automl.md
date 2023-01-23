@@ -38,7 +38,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/create-dw-table.png)
 
-## Task 2: Create the Model
+## Task 2: Create the model
 
 1. As we have our data ready, let's create our **Machine Learning Model**. Go to your **Autonomous Database** dashboard and click on **Tools** and then **Oracle ML User Administration**. Click finally on **Open Oracle ML User Administration** to open the ML development environment.
 
@@ -107,9 +107,9 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/importance.png)
 
-## Task 3: Store and Query the model inside the Autonomous Database
+## Task 3: Store and query the model inside the Autonomous Database
 
-1. Once the job has finished, we can see the **result and compare the different algorithms**. Note: we see a 100% accuracy. Consider that it is a small dataset built for demo purposes. Let's select the **Decission Tree Model** and let's create a **Notebook**.
+1. Once the job has finished, we can see the **result and compare the different algorithms**. Note: we see a 100% accuracy. Consider that it is a small dataset built for demo purposes. Let's select the **Decision Tree Model** and let's create a **Notebook**.
 
     ![Create Warehouse](./images/create-notebook.png)
 
@@ -136,7 +136,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/store-model.png)
 
-5. Once you **have add** it, you can click on the **Play** button to **Run all the paragraphs**. If you get a confirmation message to **Run all paragraphas?**, answer **OK**.
+5. Once you **have add** it, you can click on the **Play** button to **Run all the paragraphs**. If you get a confirmation message to **Run all paragraphs?**, answer **OK**.
 
     ![Run all paragraphs ](./images/run-all.png)
 
@@ -151,10 +151,12 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Create Warehouse](./images/query-model.png)
 
+_Congratulations! Well done!_
+
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

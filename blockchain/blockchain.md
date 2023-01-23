@@ -23,7 +23,7 @@ In this lab, you will:
 
 This lab assumes you have created the Autonomous Data Warehouse database in the previous lab.
 
-## Task 1: Create Blockchain Table
+## Task 1: Create Blockchain table
 
 1. Before start the exercise you need to **Download the Data**. Download the **CSV dataset** from the following [LINK] (https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/revenue.csv). 
 
@@ -256,10 +256,12 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Validate Table](./images/validate-table.png)
 
+You can **proceed to the next lab.**
+
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

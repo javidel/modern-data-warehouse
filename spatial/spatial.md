@@ -22,7 +22,7 @@ In this lab, you will:
 
 This lab assumes you have created the Autonomous Data Warehouse database in the previous lab.
 
-## Task 1: Create Warehouse Table
+## Task 1: Create warehouse table
 
 1. We are going to create a **new table**. This table is going to store the location of our warehouses where we ship the products to our customers. **Run** the following statements:
 
@@ -45,7 +45,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 2: Create Spatial function for latitude and longitude
 
-1. **Create function** to convert latitude and langitude into Oracle Spatial Objects. With this function, we will be able to run queries easily.
+1. **Create function** to convert latitude and longitude into Oracle Spatial Objects. With this function, we will be able to run queries easily.
 
     ```
         <copy> 
@@ -144,10 +144,13 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Query 3](./images/query3.png)
 
+
+You can **proceed to the next lab.**
+
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

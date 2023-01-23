@@ -30,7 +30,7 @@ Estimated Lab Time: 15 minutes.
 ### Objectives 
 - Create an Autonomous Database with the latest features of Oracle Databases
 
-## Task 1: Create a new Autonomous Data Warehouse Database
+## Task 1: Create a new Autonomous Data Warehouse database
 
 1. Click on the hamburger **MENU** link at the upper left corner of the page.
 
@@ -50,7 +50,7 @@ Estimated Lab Time: 15 minutes.
 
         By default, any OCI tenancy has a default ***root*** compartment, named after the tenancy itself. The tenancy administrator (default root compartment administrator) is any user who is a member of the default Administrators group. For the workshop purpose, you can use ***root***.
         
-        To learn more about comparments, see [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
+        To learn more about compartments, see [Managing Compartments](https://docs.cloud.oracle.com/en-us/iaas/Content/Identity/Tasks/managingcompartments.htm).
 
     - **Display Name:** Enter the display name for your ADW Instance. For this demo purpose, I have called my database `MODERNDW`.
         ```
@@ -107,7 +107,7 @@ Estimated Lab Time: 15 minutes.
     
     ![ADB Creation Password](./images/adb-creation3.png)
 
-4. Under **Choose a license type** section, choose **License Type: Licence Included**.
+4. Under **Choose a license type** section, choose **License Type: License Included**.
 
     When you have completed the required fields, scroll down and click on the blue **Create Autonomous Database** button at the bottom of the form:
 
@@ -180,18 +180,18 @@ You have just created an Autonomous Database with the latest features of Oracle 
 
     ![ADB Database User detail](./images/adb-user-creation.png)
 
-6. **CNVG** user has been creadted.
+6. **CNVG** user has been created.
     
     ![ADB Database User created](./images/adb-user-created.png)
 
 
-Now you can proceed to the next Lab.
+You can **proceed to the next lab.**
 
 ## Acknowledgements
 
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

@@ -1,5 +1,6 @@
 {
     "workshoptitle": "Modern Data Warehouse Workshop",
+    "help": "livelabs-help-db_us@oracle.com",
     "tutorials": [
                 {
             "title": "Introduction",
@@ -7,7 +8,7 @@
             "filename": "./../../intro/intro.md"
         },
           {
-            "title": "Getting Started",
+            "title": "Getting started",
              "filename": "https://oracle-livelabs.github.io/common/labs/cloud-login/pre-register-free-tier-account.md"
           },
           {
@@ -16,17 +17,17 @@
             "filename": "./../../adw/adw.md"
         },
         {
-            "title": "Lab 2: Load JSON Tweets",
+            "title": "Lab 2: Load JSON tweets",
             "description": "In this Lab you will load JSON Tweets.",
             "filename": "./../../json/json.md"
         },
         {
-            "title": "Lab 3: Sentiment Analysis with Oracle Text",
+            "title": "Lab 3: sentiment analysis with Oracle Text",
             "description": "In this Lab you will analyse sentiment with Oracle Text.",
             "filename": "./../../text/text.md"
         },
         {
-            "title": "Lab 4: Load Transactional Data on Blockchain table",
+            "title": "Lab 4: Load transactional data on Blockchain table",
             "description": "In this Lab you will load Transactional Data on Blockchain table.",
             "filename": "./../../blockchain/blockchain.md"
         },
@@ -41,7 +42,7 @@
             "filename": "./../../apex/apex.md"
         },
         {
-            "title": "BONUS CONTENT - Lab 7: Predict Customer Churn with AutoML",
+            "title": "BONUS CONTENT - Lab 7: Predict customer churn with AutoML",
             "description": "In this Lab you will combine Ecommerce Transactional data with Twitter info, to predict if customer is going to 'churn' by cancelling their premium card.",
             "filename": "./../../automl/automl.md"
         },

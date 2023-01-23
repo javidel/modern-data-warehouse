@@ -22,7 +22,7 @@ In this lab, you will:
 
 This lab assumes you have done all the other labs.
 
-## Task 1: Create Workspace
+## Task 1: Create workspace
 
 1. Let's create a new workspace in **APEX** before we create an application. In your **Autonomous Database**, go to **Tools** and then **Oracle APEX**. Finally click on **Open APEX** button.
 
@@ -45,7 +45,7 @@ This lab assumes you have done all the other labs.
 
     ![Select SQL](./images/existing-schema.png)
 
-5. Define the **user**, **worskpace** and password. Then click on **Create Workspace**.
+5. Define the **user**, **workspace** and password. Then click on **Create Workspace**.
 
     - **Database User:** CNVG. You have to search the database user as you have selected existing schema option previously.
         ```
@@ -221,9 +221,9 @@ This lab assumes you have done all the other labs.
 _Congratulations! Well done!_
 
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

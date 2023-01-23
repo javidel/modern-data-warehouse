@@ -32,7 +32,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         <copy>JSON_Full_tweets.json</copy>
         ```
 
-2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket. Open a new web browser window, access to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Storage** from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
+2. Once you have downloaded the JSON containing some tweets, we need to upload them into Object Storage. First we need to create a bucket. Open a new web browser window, access to the **Oracle Cloud console** page, cloud.oracle.com, after access to **Storage** from the **Oracle Cloud Console Burger Menu** and after **Buckets** section.
 
     ![Go to Buckets](./images/create-bucket.png)
 
@@ -68,7 +68,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 2: Create credential for Autonomous Database
 
-1. We have the tweets available in the Object Storage. Now we need to create a **credential**. This credential willl allow the Autonomous Database to authenticate against the Object Storage Service. Click on your **profile icon** and then on **My profile**. **Take a note** of your user as you will need it for later.
+1. We have the tweets available in the Object Storage. Now we need to create a **credential**. This credential will allow the Autonomous Database to authenticate against the Object Storage Service. Click on your **profile icon** and then on **My profile**. **Take a note** of your user as you will need it for later.
 
     ![Find credentials](./images/go-to-credential2.png)
 
@@ -101,7 +101,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Copy token](./images/save-token.png)
 
-7. We have stored the credential, now we need to find and store the location of where the data is stored. We will share this info with the Autonomous Database so it can load it. Let's go back to the **Object Storage**. Go from the **Oracle Cloud Console Burguer Menu** and after **Buckets** section.
+7. We have stored the credential, now we need to find and store the location of where the data is stored. We will share this info with the Autonomous Database so it can load it. Let's go back to the **Object Storage**. Go from the **Oracle Cloud Console Burger Menu** and after **Buckets** section.
 
     ![Go to Object](./images/go-to-object.png)
 
@@ -155,8 +155,8 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Select sql](./images/select-sql.png)
 
-18. Run the following **SQL** for creating the credential, replacing useername and password for the information that we already copied before.
-    - **username**, it is your **Oracle Cloud user name** that we copied on step number 1 of this task. It should be your your email addrees.
+18. Run the following **SQL** for creating the credential, replacing username and password for the information that we already copied before.
+    - **username**, it is your **Oracle Cloud user name** that we copied on step number 1 of this task. It should be your your email address.
     - **password**, it is the **Auth token** that we copied on step number 6 of this task.
 
     ```
@@ -172,7 +172,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         </copy>
     ```
 
-    Check that the **PL/SQL procedure has being sucesfully completed**.
+    Check that the **PL/SQL procedure has being successfully completed**.
 
     ![Create credential](./images/create-credential.png)
 
@@ -257,7 +257,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
         </copy>
     ```
 
-    Check that the **PL/SQL procedure has being sucesfully completed**.
+    Check that the **PL/SQL procedure has being successfully completed**.
 
     ![Copy Collection](./images/copy-collection.png)
 
@@ -274,7 +274,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Select count](./images/select-count.png)
 
-2. Now let's visualize the conent of the JSON tweets. For that we are going to use the **json\_serialize**.
+2. Now let's visualize the content of the JSON tweets. For that we are going to use the **json\_serialize**.
 
     ```    
         <copy> 
@@ -307,7 +307,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Select count](./images/query-paris.png)
 
-5. If you feel more confortable with JSON, we can use the **Query by Example** directy on JSON. Let's run a simple query. Let's go to the JSON utility.
+5. If you feel more comfortable with JSON, we can use the **Query by Example** directly on JSON. Let's run a simple query. Let's go to the JSON utility.
 
     ![Back to JSON](./images/back-to-json.png)
 
@@ -331,12 +331,12 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Select id](./images/query-not-paris.png)
 
-You can proceed to the next lab.
+You can **proceed to the next lab.**
 
 ## Acknowledgements
-* **Author** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Author** - Javier de la Torre, Principal Data Management Specialist
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
-* **Last Updated By/Date** - Javier de la Torre, Principal Data Mangagement Specialist
+* **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
 ## Need Help?
 Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.

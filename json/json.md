@@ -25,7 +25,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
 ## Task 1: Upload JSON tweets into Object Storage
 
-1. Before start the exercise you need to download the data that we will use. **Click** on the following [LINK](https://objectstorage.eu-frankfurt-1.oraclecloud.com/n/fro8fl9kuqli/b/json_data/o/JSON_Full_tweets.json "open json file") to see the JSON dataset and **Save it** using **Control S** or different method to save files. We recommend you to call the file **JSON\_Full\_tweets.json**.
+1. Before start the exercise you need to download the data that we will use. **Click** on the following [LINK](https://objectstorage.us-ashburn-1.oraclecloud.com/p/jyHA4nclWcTaekNIdpKPq3u2gsLb00v_1mmRKDIuOEsp--D6GJWS_tMrqGmb85R2/n/c4u04/b/livelabsfiles/o/labfiles/JSON_Full_tweets.json "open json file") to see the JSON dataset and **Save it** using **Control S** or different method to save files. We recommend you to call the file **JSON\_Full\_tweets.json**.
     
     - **File name:** JSON\_Full\_tweets.json
         ```
@@ -338,7 +338,3 @@ You can **proceed to the next lab.**
 * **Contributors** - Priscila Iruela, Technology Product Strategy Director
 * **Last Updated By/Date** - Javier de la Torre, Principal Data Management Specialist
 
-## Need Help?
-Please submit feedback or ask for help using our [LiveLabs Support Forum](https://community.oracle.com/tech/developers/categories/livelabsdiscussions). Please click the **Log In** button and login using your Oracle Account. Click the **Ask A Question** button to the left to start a *New Discussion* or *Ask a Question*.  Please include your workshop name and lab name.  You can also include screenshots and attach files.  Engage directly with the author of the workshop.
-
-If you do not have an Oracle Account, click [here](https://profile.oracle.com/myprofile/account/create-account.jspx) to create one.

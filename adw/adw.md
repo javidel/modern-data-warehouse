@@ -36,13 +36,13 @@ Estimated Lab Time: 15 minutes.
 
     This will produce a drop-down menu, where you should select **Autonomous Data Warehouse**.
 
-    ![Select Autonomous Data Warehouse](./images/select-autonomous.png)
+    ![Select Autonomous Data Warehouse](./images/select-adw-2.png)
 
     This will take you to the management console page.
     
 2. To create a new instance, click the blue **Create Autonomous Database** button.
 
-    ![Create ADB](./images/create-adb.png)
+    ![Create ADB](./images/create-adb-2.png)
 
     Enter the required information and click the **Create Autonomous Database** button at the bottom of the form. For the purposes of this workshop, use the information below:
 
@@ -80,13 +80,13 @@ Estimated Lab Time: 15 minutes.
 
     - **Choose Database version:** 19c
     
-    - **CPU Count:** 1
+    - **ECPU Count:** 2
     
     - **Storage Capacity (TB):** 1 or 0,02 Gb if you had chosen the **Always Free option**.
 
     - **CPU Count and Storage Capacity (TB)** are defined by default for the Always Free Tier.
     
-    - **OCPU Auto scaling:** Off
+    - **ECPU Auto scaling:** Off
     
     - **Storage Auto scaling:** Off
 

@@ -26,5 +26,6 @@
         "textkey",
         "unpackarrays",
         "VARCHAR"
-    ]
+    ],
+    "liveServer.settings.port": 5501
 }

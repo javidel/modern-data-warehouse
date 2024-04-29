@@ -133,7 +133,7 @@ This lab assumes you have created the Autonomous Data Warehouse database in the 
 
     ![Log out](./images/sign-out.png)
 
-15. Click on **Sign in**.
+15. Now we are ready to **Sign in**.
 
     ![Log ing](./images/sign-in.png)
 

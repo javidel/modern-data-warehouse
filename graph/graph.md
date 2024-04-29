@@ -32,7 +32,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 2. We have a new dataset which has information about twitter's users followers. We are going to use this data to **build a graph**. First we need to upload this file into the object storage. First we need to create a bucket. Access to **Storage** from the **Oracle Cloud Console Burger Menu** and after **Buckets** section.
 
-    ![Go to Storage](./images/go-to-storage.png)
+    ![Go to Storage](./images/go-to-object.png)
 
 3. Select our **json_data** bucket.
 
@@ -97,7 +97,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 16. Let's create a **new JSON Collection**.
 
-    ![Select upload](./images/back-to-json.png)
+    ![Select upload](./images/go-to-json.png)
 
 17. Click on create **New collection**.
 
@@ -415,7 +415,7 @@ This lab assumes you have created the Autonomous Data Warehouse database and you
 
 8. Go to **JSON** section.
 
-    ![Shell](./images/select-json.png)
+    ![Shell](./images/go-to-json.png)
 
 9. Select the **friend_of** collection and click on **Create View**.
 
